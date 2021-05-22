@@ -9,15 +9,15 @@ import { Card, Button } from 'react-bootstrap';
 import './animeCard.css';
 
 export class AnimeCard extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      buttonValue:'Add To Watch List',
-      variant:'primary',
-      favoriteClicking:3,
-      likesClicking:3,
-      likeControl:'ADD TO FAVORITE',
-      like:'❤',
+    this.state = {
+      buttonValue: 'Add To Watch List',
+      variant: 'primary',
+      favoriteClicking: 3,
+      likesClicking: 3,
+      likeControl: 'ADD TO FAVORITE',
+      like: '❤',
     };
   }
 
@@ -43,32 +43,32 @@ export class AnimeCard extends Component {
   }
 
   changeButtonValue = async () => {
-    await this.setState({favoriteClicking:this.state.favoriteClicking+1});
-    if(this.state.favoriteClicking % 2 === 0){
+    await this.setState({ favoriteClicking: this.state.favoriteClicking + 1 });
+    if (this.state.favoriteClicking % 2 === 0) {
       this.setState({
-        buttonValue:'Remove From Watch List',
-        variant:'danger',
+        buttonValue: 'Remove From Watch List',
+        variant: 'danger',
       });
     }
-    else{
+    else {
       this.setState({
-        buttonValue:'Add To Watch List',
-        variant:'primary',
+        buttonValue: 'Add To Watch List',
+        variant: 'primary',
       });
     }
   }
-  changeLikeColor=async ()=>{
-    await this.setState({likesClicking:this.state.likesClicking+1});
-    if(this.state.likesClicking % 2 === 0){
+  changeLikeColor = async () => {
+    await this.setState({ likesClicking: this.state.likesClicking + 1 });
+    if (this.state.likesClicking % 2 === 0) {
       this.setState({
-        likeControl:'REMOVE FROM FAVORITE',
-        like:'❤️'
+        likeControl: 'REMOVE FROM FAVORITE',
+        like: '❤️'
       });
     }
-    else{
+    else {
       this.setState({
-        likeControl:'ADD TO FAVORITE',
-        like:'❤',
+        likeControl: 'ADD TO FAVORITE',
+        like: '❤',
       });
     }
   }
@@ -93,8 +93,7 @@ export class AnimeCard extends Component {
               <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
               <Button variant={this.state.variant} onClick={() => {this.changeButtonValue() ; this.addToWatchList();}}>{this.state.buttonValue}</Button>
             </>
-            }
-            
+            } 
             {!this.props.showBtns &&
             <>
               <Button>Remove from watch list</Button>
