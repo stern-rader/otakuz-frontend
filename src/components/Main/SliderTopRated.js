@@ -1,85 +1,68 @@
-import React, { Component } from 'react';
-
-//bootstrap components
-// import {Carousel} from 'react-bootstrap';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+  'mdbreact';
 
-export class SliderTopRated extends Component {
+class SliderTopRated extends React.Component {
   render() {
-    return (
-      <>
-        <footer class="bg-light text-center text-white">
-          {/* <!-- Grid container --> */}
-          <div class="container p-4 pb-0">
-            {/* <!-- Section: Social media --> */}
-            <section class="mb-4">
-              {/* <!-- Facebook --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#3b5998'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-facebook-f"></i
-                ></a>
-
-              {/* <!-- Twitter --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#55acee'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-twitter"></i
-                ></a>
-
-              {/* <!-- Google --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#dd4b39;'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-google"></i
-                ></a>
-
-              {/* <!-- Instagram --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#ac2bac'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-instagram"></i
-                ></a>
-
-              {/* <!-- Linkedin --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#0082ca'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-linkedin-in"></i
-                ></a>
-              {/* <!-- Github --> */}
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style={{backgroundColor:'#333333'}}
-                href="#!"
-                role="button"
-              ><i class="fab fa-github"></i
-                ></a>
-            </section>
-            {/* <!-- Section: Social media --> */}
-          </div>
-          {/* <!-- Grid container --> */}
-
-          {/* <!-- Copyright --> */}
-          <div class="text-center p-3" style={{backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
-    © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-          </div>
-          {/* <!-- Copyright --> */}
-        </footer>
-      </>
+    return(
+      <MDBContainer>
+        <MDBCarousel
+          activeItem={1}
+          length={3}
+          showControls={true}
+          showIndicators={true}
+          className="z-depth-1"
+        >
+          <MDBCarouselInner>
+            <MDBCarouselItem itemId="1">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                  alt="First slide"
+                />
+                <MDBMask overlay="black-light" />
+              </MDBView>
+              <MDBCarouselCaption>
+                <h3 className="h3-responsive">Light mask</h3>
+                <p>First text</p>
+              </MDBCarouselCaption>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="2">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                  alt="Second slide"
+                />
+                <MDBMask overlay="black-strong" />
+              </MDBView>
+              <MDBCarouselCaption>
+                <h3 className="h3-responsive">Strong mask</h3>
+                <p>Second text</p>
+              </MDBCarouselCaption>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="3">
+              <MDBView>
+                <img
+                  className="d-block w-100"
+                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+                  alt="Third slide"
+                />
+                <MDBMask overlay="black-slight" />
+              </MDBView>
+              <MDBCarouselCaption>
+                <h3 className="h3-responsive">Slight Mast</h3>
+                <p>Third text</p>
+              </MDBCarouselCaption>
+            </MDBCarouselItem>
+          </MDBCarouselInner>
+        </MDBCarousel>
+      </MDBContainer>
     );
   }
 }
