@@ -20,7 +20,7 @@ export class AnimeCard extends Component {
             <Card.Text>espisodes: {this.props.episodes}</Card.Text>
             <Card.Text>Type: {this.props.type}</Card.Text>
 
-            <Button variant="primary">Add To Watch List</Button>
+            <Button variant="primary" onClick={this.props.addToWatchList} >Add To Watch List</Button>
           </Card.Body>
         </Card>
       </>

@@ -27,7 +27,7 @@ export class Header extends Component {
               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
             }
             {isAuthenticated &&
-              <Button variant='outline-primary' id='logIn' onClick={() => {
+              <Button variant='outline-primary' id='logOut' onClick={() => {
                 logout({ returnTo: window.location.origin });
               }}
               > Log Out</Button>

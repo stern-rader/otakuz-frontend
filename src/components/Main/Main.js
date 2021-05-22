@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import SliderTopRated from './SliderTopRated';
 import SearchBar from './SearchBar';
 import Results from './Results';
+import Recomendation from './Recomendation';
+//axios library
 import axios from 'axios';
 
 export class Main extends Component {
@@ -31,7 +33,8 @@ export class Main extends Component {
       <>
         <SliderTopRated />
         <SearchBar showResults={this.showResults} />
-        <Results animeResults={this.state.animeResults} />
+        <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList} />
+        <Recomendation />
       </>
     );
   }

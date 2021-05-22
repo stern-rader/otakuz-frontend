@@ -19,6 +19,7 @@ export class Results extends Component {
         end_date={data.end_date}
         episodes={data.episodes}
         type={data.type}
+        addToWatchList={this.props.addToWatchList}
       />;
     });
     return (
