@@ -1,20 +1,85 @@
 import React, { Component } from 'react';
 
 //bootstrap component
-import {Card} from 'react-bootstrap';
+// import {Card} from 'react-bootstrap';
+//mdbreact components
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact';
 
 export class Test extends Component {
   render() {
     return (
-      <Card style={{ width: '100%' , marginTop:'30rem' , textAlign:'center' }}>
+      <footer class="bg-light text-center text-white">
+        {/* <!-- Grid container --> */}
+        <div class="container p-4 pb-0">
+          {/* <!-- Section: Social media --> */}
+          <section class="mb-4">
+            {/* <!-- Facebook --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#3B5998' , borderRadius:'10rem'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-facebook-f"></i
+              ></a>
 
-        <Card.Body>
-          <Card.Title>About us </Card.Title>
-          <Card.Text>
-         anime website
-          </Card.Text>
-        </Card.Body>
-      </Card>
+            {/* <!-- Twitter --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#55acee'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-twitter"></i
+              ></a>
+
+            {/* <!-- Google --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#DD4B39'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-google"></i
+              ></a>
+
+            {/* <!-- Instagram --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#ac2bac'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-instagram"></i
+              ></a>
+
+            {/* <!-- Linkedin --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#0082ca'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-linkedin-in"></i
+              ></a>
+            {/* <!-- Github --> */}
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style={{backgroundColor:'#333333'}}
+              href="#!"
+              role="button"
+            ><i class="fab fa-github"></i
+              ></a>
+          </section>
+          {/* <!-- Section: Social media --> */}
+        </div>
+        {/* <!-- Grid container --> */}
+
+        {/* <!-- Copyright --> */}
+        <div class="text-center p-3" style={{backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
+    © 2020 : 
+          <a class="text-white" href="https://mdbootstrap.com/"> Otakuz</a>
+        </div>
+        {/* <!-- Copyright --> */}
+      </footer>
     );
   }
 }
