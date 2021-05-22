@@ -7,7 +7,13 @@ import Footer from './components/Footer/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/Profile/Profile';
 
-// import LoginButton from './components/Header/LoginButton';
+//route components
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter
+} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props){
@@ -25,14 +31,22 @@ class App extends React.Component {
     const { isAuthenticated } = this.props.auth0;
     return (
       <>
-        <Header />
-        {!isAuthenticated &&
-          <Main addToWatchList={this.addToWatchList} />
-        }
-        { isAuthenticated &&
+        <BrowserRouter>
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path='/' >
+                <Main addToWatchList={this.addToWatchList} />
+              </Route>
+              <Route exact path='/profile'>
+                { isAuthenticated &&
           <Profile test={this.test} />
-        }
-        < Footer />
+                }
+              </Route>
+            </Switch>
+            < Footer />
+          </Router>
+        </BrowserRouter>
       </>
     );
   }

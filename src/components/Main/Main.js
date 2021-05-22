@@ -16,15 +16,22 @@ export class Main extends Component {
       animeResults:[],
     };
   }
+  async componentDidMount(){
+    const url = (`http://localhost:3666/topAnimes`);
+    const results = await axios.get(url);
+    console.log(results.data);
+    await this.setState({animeResults:results.data});
+    console.log('anime list',this.state.animeResults);
+  }
 
   showResults = async (event) => {
     event.preventDefault();
     console.log(event.target.animeName.value);
-    const url = (`https://api.jikan.moe/v3/search/anime?q=${event.target.animeName.value}`);
+    const url = (`http://localhost:3666/anime?q=${event.target.animeName.value}`);
     event.target.animeName.value='';
     const results = await axios.get(url);
-    console.log(results.data.results);
-    await this.setState({animeResults:results.data.results});
+    console.log(results.data);
+    await this.setState({animeResults:results.data});
     console.log('anime list',this.state.animeResults);
 
   }
