@@ -1,3 +1,65 @@
-.btn-floating{
+/* .btn-floating{
   background-color: beige!important;
+} */
+
+/* style={{backgroundColor:'#3B5998' , borderRadius:'10rem'}} */
+
+#footer{
+  margin-top:30rem;
+}
+
+#facebook
+{
+  background-color:#3B5998!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
+}
+
+#twitter
+{
+  background-color:#55acee!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
+}
+
+#google
+{
+  background-color:#DD4B39!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
+}
+
+
+#instagram
+{
+  background-color:#ac2bac!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
+}
+
+
+#github
+{
+  background-color:#333333!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
+}
+
+#linkedin
+{
+  background-color:#0082ca!important;
+  /* width:1.5rem;
+  height: 3rem; */
+  border-radius: 100rem;
+
 }
