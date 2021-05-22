@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
 //bootstrap comonents
-import {Card , Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 export class AnimeCard extends Component {
   render() {
     return (
       <>
-        <Card style={{ width: '18rem' , marginLeft:'8rem'}}>
+        <Card style={{ width: '18rem', marginLeft: '8rem' }}>
           <Card.Img variant="top" src={this.props.image_url} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
@@ -19,8 +19,7 @@ export class AnimeCard extends Component {
             <Card.Text>End Date : {this.props.end_date}</Card.Text>
             <Card.Text>espisodes: {this.props.episodes}</Card.Text>
             <Card.Text>Type: {this.props.type}</Card.Text>
-            <Button variant="primary">Vote</Button>
-            <Button variant="primary">Favorite</Button>
+
             <Button variant="primary">Add To Watch List</Button>
           </Card.Body>
         </Card>
