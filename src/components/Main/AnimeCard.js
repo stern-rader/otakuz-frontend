@@ -61,7 +61,7 @@ export class AnimeCard extends Component {
             <Card.Text>espisodes: {this.props.episodes}</Card.Text>
             <Card.Text>Type: {this.props.type}</Card.Text>
             <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
-            <Button variant={this.state.variant} onClick={this.changeButtonValue}>{this.state.buttonValue}</Button>
+            <Button variant={this.state.variant} onClick={this.changeButtonValue}>{this.state.buttonValue}</Button
           </Card.Body>
         </Card>
       </>

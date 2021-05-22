@@ -10,16 +10,27 @@ import Profile from './components/Profile/Profile';
 // import LoginButton from './components/Header/LoginButton';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      test:[],
+    };
+  }
+
+  addToWatchList = () => {
+    this.setState({test:[1,2,3,4]});
+    console.log(this.state.test);
+  }
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
       <>
         <Header />
         {!isAuthenticated &&
-          <Main />
+          <Main addToWatchList={this.addToWatchList} />
         }
         { isAuthenticated &&
-          <Profile />
+          <Profile test={this.test} />
         }
         < Footer />
       </>
