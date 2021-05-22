@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+// auth library
+import { withAuth0 } from '@auth0/auth0-react';
 
 //bootstrap components
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar , Form , Nav , Button} from 'react-bootstrap';
+import { Navbar, Form, Nav, Button } from 'react-bootstrap';
 //css files
 import './header.css';
 
 export class Header extends Component {
   render() {
+    const { isAuthenticated, loginWithRedirect, logout } = this.props.auth0;
+
+
     return (
       <>
         <Navbar bg="dark" variant="dark">
@@ -18,7 +23,15 @@ export class Header extends Component {
             <Nav.Link href="#pricing">About US</Nav.Link>
           </Nav>
           <Form inline>
-            <Button variant='outline-primary' id='logIn' >Log In</Button>
+            {!isAuthenticated &&
+              <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
+            }
+            {isAuthenticated &&
+              <Button variant='outline-primary' id='logIn' onClick={() => {
+                logout({ returnTo: window.location.origin });
+              }}
+              > Log Out</Button>
+            }
           </Form>
         </Navbar>
 
@@ -27,4 +40,4 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);
