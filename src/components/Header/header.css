@@ -11,10 +11,19 @@ a.nav-link {
 
 /* log in button */
 #logIn{
-  margin-left: 9rem;
+  margin-left: 5rem;
 }
 
 #logIn:hover
+{
+  background-color: white!important;
+}
+/* log out button */
+#logOut{
+  margin-left: 5rem;
+}
+
+#logOut:hover
 {
   background-color: white!important;
 }

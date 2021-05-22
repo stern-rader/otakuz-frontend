@@ -1,7 +1,6 @@
 import React from 'react';
 
 //bootstrap components
-// import {Carousel} from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
@@ -13,7 +12,7 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
 class SliderTopRated extends React.Component {
   render() {
     return(
-      <MDBContainer>
+      <MDBContainer style={{width:'width:100%'}}>
         <MDBCarousel
           activeItem={1}
           length={3}
