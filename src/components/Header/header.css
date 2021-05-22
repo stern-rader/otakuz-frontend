@@ -1,0 +1,20 @@
+/* Nav component */
+.mr-auto{
+  margin-left:35rem;
+}
+
+/* link components */
+a.nav-link {
+  padding: 0.5rem;
+  margin-left: 5rem;
+}
+
+/* log in button */
+#logIn{
+  margin-left: 9rem;
+}
+
+#logIn:hover
+{
+  background-color: white!important;
+}
