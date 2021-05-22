@@ -1,46 +1,84 @@
 import React, { Component } from 'react';
 
 //bootstrap components
-import {Carousel} from 'react-bootstrap';
+// import {Carousel} from 'react-bootstrap';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 export class SliderTopRated extends Component {
   render() {
     return (
       <>
-        <Carousel style={{width:'20%'}}>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://via.placeholder.com/300.png/09f/fff"
-              alt="First slide"
-            />
-            <Carousel.Caption>
+        <footer class="bg-light text-center text-white">
+          {/* <!-- Grid container --> */}
+          <div class="container p-4 pb-0">
+            {/* <!-- Section: Social media --> */}
+            <section class="mb-4">
+              {/* <!-- Facebook --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#3b5998'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-facebook-f"></i
+                ></a>
 
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://via.placeholder.com/300.png/09f/fff"
-              alt="Second slide"
-            />
+              {/* <!-- Twitter --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#55acee'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-twitter"></i
+                ></a>
 
-            <Carousel.Caption>
+              {/* <!-- Google --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#dd4b39;'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-google"></i
+                ></a>
 
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://via.placeholder.com/300.png/09f/fff"
-              alt="Third slide"
-            />
+              {/* <!-- Instagram --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#ac2bac'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-instagram"></i
+                ></a>
 
-            <Carousel.Caption>
+              {/* <!-- Linkedin --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#0082ca'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-linkedin-in"></i
+                ></a>
+              {/* <!-- Github --> */}
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style={{backgroundColor:'#333333'}}
+                href="#!"
+                role="button"
+              ><i class="fab fa-github"></i
+                ></a>
+            </section>
+            {/* <!-- Section: Social media --> */}
+          </div>
+          {/* <!-- Grid container --> */}
 
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+          {/* <!-- Copyright --> */}
+          <div class="text-center p-3" style={{backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
+    © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          </div>
+          {/* <!-- Copyright --> */}
+        </footer>
       </>
     );
   }
