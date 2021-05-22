@@ -19,6 +19,7 @@ export class Main extends Component {
     event.preventDefault();
     console.log(event.target.animeName.value);
     const url = (`https://api.jikan.moe/v3/search/anime?q=${event.target.animeName.value}`);
+    event.target.animeName.value='';
     const results = await axios.get(url);
     console.log(results.data.results);
     await this.setState({animeResults:results.data.results});
@@ -29,7 +30,6 @@ export class Main extends Component {
     return (
       <>
         <SliderTopRated />
-        Main Component
         <SearchBar showResults={this.showResults} />
         <Results animeResults={this.state.animeResults} />
       </>

@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 
-//bootstrap component
-// import {Card} from 'react-bootstrap';
 //mdbreact components
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact';
+//css files
+import './footer.css';
 
 export class Test extends Component {
   render() {
     return (
-      <footer class="bg-light text-center text-white">
+      <footer class="bg-light text-center text-white" id='footer'>
         {/* <!-- Grid container --> */}
-        <div class="container p-4 pb-0">
+        <div class="container p-4 pb-0" >
           {/* <!-- Section: Social media --> */}
           <section class="mb-4">
             {/* <!-- Facebook --> */}
             <a
               class="btn btn-primary btn-floating m-1"
-              style={{backgroundColor:'#3B5998' , borderRadius:'10rem'}}
               href="#!"
               role="button"
-            ><i class="fab fa-facebook-f"></i
+              id='facebook'
+            ><i class="fab fa-facebook-f" ></i
               ></a>
 
             {/* <!-- Twitter --> */}
@@ -31,13 +29,14 @@ export class Test extends Component {
               style={{backgroundColor:'#55acee'}}
               href="#!"
               role="button"
+              id='twitter'
             ><i class="fab fa-twitter"></i
               ></a>
 
             {/* <!-- Google --> */}
             <a
               class="btn btn-primary btn-floating m-1"
-              style={{backgroundColor:'#DD4B39'}}
+              id='google'
               href="#!"
               role="button"
             ><i class="fab fa-google"></i
@@ -49,6 +48,7 @@ export class Test extends Component {
               style={{backgroundColor:'#ac2bac'}}
               href="#!"
               role="button"
+              id='instagram'
             ><i class="fab fa-instagram"></i
               ></a>
 
@@ -58,6 +58,7 @@ export class Test extends Component {
               style={{backgroundColor:'#0082ca'}}
               href="#!"
               role="button"
+              id='linkedin'
             ><i class="fab fa-linkedin-in"></i
               ></a>
             {/* <!-- Github --> */}
@@ -66,6 +67,7 @@ export class Test extends Component {
               style={{backgroundColor:'#333333'}}
               href="#!"
               role="button"
+              id='github'
             ><i class="fab fa-github"></i
               ></a>
           </section>
@@ -75,7 +77,7 @@ export class Test extends Component {
 
         {/* <!-- Copyright --> */}
         <div class="text-center p-3" style={{backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
-    © 2020 : 
+    © 2020 :
           <a class="text-white" href="https://mdbootstrap.com/"> Otakuz</a>
         </div>
         {/* <!-- Copyright --> */}
