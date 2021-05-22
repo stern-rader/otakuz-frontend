@@ -27,14 +27,25 @@ export class Profile extends Component {
     console.log('anime list',this.state.animeResults);
   }
 
+  deleteFromWatchList = async (index) => {
+    const id= index ;
+    const query = {
+      email:this.props.auth0.user.email,
+    };
+
+    const results = await axios.delete(`http://localhost:3666/otakuzUser/${id}` , {params:query}) ;
+    console.log('books after deletion',results);
+    await this.setState({watchListData:results.data});
+  }
+
   render() {
-    const { user } = this.props.auth0;
+    // const { user } = this.props.auth0;
     console.log('profile' , this.props.test);
     return (
       <div>
-        <div>Hello {user.name}</div>
-        <div>Email: {user.email}</div>
-        <WatchList animeResults={this.state.watchListData} />
+        {/* <div>Hello {user.name}</div>
+        <div>Email: {user.email}</div> */}
+        <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} />
         {/* <Results animeResults={this.state.watchListData} showBtns={0}/> */}
 
       </div>

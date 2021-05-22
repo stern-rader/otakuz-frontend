@@ -76,7 +76,7 @@ export class AnimeCard extends Component {
     // const {loginWithRedirect} = this.props.auth0;
     return (
       <>
-        <Card >
+        <Card key={this.props.index}>
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
@@ -93,10 +93,10 @@ export class AnimeCard extends Component {
               <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
               <Button variant={this.state.variant} onClick={() => {this.changeButtonValue() ; this.addToWatchList();}}>{this.state.buttonValue}</Button>
             </>
-            } 
+            }
             {!this.props.showBtns &&
             <>
-              <Button>Remove from watch list</Button>
+              <Button onClick={() => this.props.deleteFromWatchList(this.props.index)}>Remove from watch list</Button>
             </>
             }
           </Card.Body>
