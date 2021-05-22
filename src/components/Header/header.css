@@ -6,7 +6,7 @@
 /* link components */
 a.nav-link {
   padding: 0.5rem;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 
 /* log in button */
@@ -20,7 +20,7 @@ a.nav-link {
 }
 /* log out button */
 #logOut{
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 
 #logOut:hover

@@ -18,8 +18,11 @@ export class Header extends Component {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#home">Otakuz</Navbar.Brand>
           <Nav className="mr-auto" >
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="http://localhost:3000">Home</Nav.Link>
             <Nav.Link href="#features">Watch</Nav.Link>
+            {isAuthenticated &&
+            <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+            }
             <Nav.Link href="#pricing">About US</Nav.Link>
           </Nav>
           <Form inline>
