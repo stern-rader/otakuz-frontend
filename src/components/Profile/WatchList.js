@@ -20,7 +20,7 @@ export class WatchList extends Component {
         // episodes={data.episodes}
         type={data.type}
         addToWatchList={this.props.addToWatchList}
-        showBtns={0}
+        showBtns={false}
         index={idx}
         deleteFromWatchList={this.props.deleteFromWatchList}
       />;

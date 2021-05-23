@@ -35,7 +35,7 @@ export class AnimeCard extends Component {
       rate:'',
       start:this.props.start,
       end:this.props.end,
-      followers:0,
+      followers:5,
     };
     const addAnime = await axios.post(`http://localhost:3666/otakuzUser` , animeData);
     // await this.setState({books:postBook.data.books})
@@ -72,6 +72,7 @@ export class AnimeCard extends Component {
       });
     }
   }
+
   render() {
     // const {loginWithRedirect} = this.props.auth0;
     return (
@@ -86,8 +87,10 @@ export class AnimeCard extends Component {
             </Card.Text>
             <Card.Text>Start Date : {this.props.start}</Card.Text>
             <Card.Text>End Date : {this.props.end}</Card.Text>
-            {/* <Card.Text>espisodes: {this.props.episodes}</Card.Text> */}
             <Card.Text>Type: {this.props.type}</Card.Text>
+          </Card.Body>
+
+          <Card.Footer>
             {this.props.showBtns &&
             <>
               <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
@@ -99,7 +102,7 @@ export class AnimeCard extends Component {
               <Button onClick={() => this.props.deleteFromWatchList(this.props.index)}>Remove from watch list</Button>
             </>
             }
-          </Card.Body>
+          </Card.Footer>
         </Card>
       </>
     );
