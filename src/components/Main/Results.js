@@ -24,7 +24,7 @@ export class Results extends Component {
       />;
     });
     return (
-      <Row>
+      <Row style={{marginRight:'0px'}}>
         {results}
       </Row>
     );
