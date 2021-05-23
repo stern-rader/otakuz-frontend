@@ -18,6 +18,7 @@ export class AnimeCard extends Component {
       likesClicking: 3,
       likeControl: 'ADD TO FAVORITE',
       like: '❤',
+      indexRemove:-1,
     };
   }
 
@@ -35,22 +36,40 @@ export class AnimeCard extends Component {
       rate:'',
       start:this.props.start,
       end:this.props.end,
-      followers:5,
+      followers:0,
     };
     const addAnime = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
     // await this.setState({books:postBook.data.books})
+    await this.setState({indexRemove:addAnime.data.length-1});
+    // console.log(addAn)
     console.log(addAnime);
+  }
+
+  deleteFromWatchList = async (index) => {
+    console.log('props index' ,this.props.index);
+    const id= this.state.indexRemove;
+    const query = {
+      email:this.props.auth0.user.email,
+    };
+
+    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
+    console.log('anime id' , id);
+    console.log('animes after deletion',results.data);
+    await this.setState({indexRemove:this.state.indexRemove-1});
+    // await this.setState({watchListData:results.data});
   }
 
   changeButtonValue = async () => {
     await this.setState({ favoriteClicking: this.state.favoriteClicking + 1 });
     if (this.state.favoriteClicking % 2 === 0) {
+      this.addToWatchList();
       this.setState({
         buttonValue: 'Remove From Watch List',
         variant: 'danger',
       });
     }
     else {
+      this.deleteFromWatchList(this.props.index);
       this.setState({
         buttonValue: 'Add To Watch List',
         variant: 'primary',
@@ -76,6 +95,7 @@ export class AnimeCard extends Component {
 
   render() {
     // const {loginWithRedirect} = this.props.auth0;
+    // this.props.showBtns ? this.setState({indexRemove:this.props.index})
     return (
       <>
         <Card id='animeCards' key={this.props.index}>
@@ -95,7 +115,7 @@ export class AnimeCard extends Component {
             {this.props.showBtns &&
             <>
               <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
-              <Button variant={this.state.variant} onClick={() => {this.changeButtonValue() ; this.addToWatchList();}}>{this.state.buttonValue}</Button>
+              <Button variant={this.state.variant} onClick={() => {this.changeButtonValue();}}>{this.state.buttonValue}</Button>
             </>
             }
             {!this.props.showBtns &&

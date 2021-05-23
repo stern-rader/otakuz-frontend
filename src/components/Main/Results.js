@@ -9,7 +9,7 @@ import {Row} from 'react-bootstrap';
 export class Results extends Component {
   render() {
     console.log('anime props',this.props.animeResults);
-    const results = this.props.animeResults.map(data => {
+    const results = this.props.animeResults.map((data,idx) => {
       return <AnimeCard
         name={data.name}
         img={data.img}
@@ -21,6 +21,7 @@ export class Results extends Component {
         type={data.type}
         addToWatchList={this.props.addToWatchList}
         showBtns={true}
+        index={idx}
       />;
     });
     return (

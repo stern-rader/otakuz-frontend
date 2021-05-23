@@ -35,7 +35,7 @@ export class Main extends Component {
     await this.setState({animeResults:results.data});
     console.log('anime list',this.state.animeResults);
   }
-  
+
   render() {
     return (
       <>
