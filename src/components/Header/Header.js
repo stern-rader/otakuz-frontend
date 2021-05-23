@@ -92,7 +92,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                     <Nav.Link href="#features">Watch</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                    {isAuthenticated &&
+                      <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                    }
                   </MDBNavItem>
                   <MDBNavItem>
                     {!isAuthenticated &&
