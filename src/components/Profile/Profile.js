@@ -5,7 +5,8 @@ import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 //created components
 import WatchList from './WatchList';
-// import Results from '../Main/Results';
+//css files
+import './profile.css';
 
 
 export class Profile extends Component {
@@ -39,14 +40,12 @@ export class Profile extends Component {
   }
 
   render() {
-    // const { user } = this.props.auth0;
     console.log('profile' , this.props.test);
     return (
       <div>
-        {/* <div>Hello {user.name}</div>
-        <div>Email: {user.email}</div> */}
+        <h1 id="header" >Watch List</h1>
+        <hr></hr>
         <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} />
-        {/* <Results animeResults={this.state.watchListData} showBtns={0}/> */}
 
       </div>
     );

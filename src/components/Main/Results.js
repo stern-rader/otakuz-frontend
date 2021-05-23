@@ -20,7 +20,7 @@ export class Results extends Component {
         // episodes={data.episodes}
         type={data.type}
         addToWatchList={this.props.addToWatchList}
-        showBtns={1}
+        showBtns={true}
       />;
     });
     return (
