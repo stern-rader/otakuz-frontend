@@ -37,7 +37,7 @@ export class AnimeCard extends Component {
       end:this.props.end,
       followers:5,
     };
-    const addAnime = await axios.post(`http://localhost:3666/otakuzUser` , animeData);
+    const addAnime = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
     // await this.setState({books:postBook.data.books})
     console.log(addAnime);
   }
@@ -57,6 +57,7 @@ export class AnimeCard extends Component {
       });
     }
   }
+
   changeLikeColor = async () => {
     await this.setState({ likesClicking: this.state.likesClicking + 1 });
     if (this.state.likesClicking % 2 === 0) {
@@ -81,7 +82,7 @@ export class AnimeCard extends Component {
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text>❤️ {this.props.rating}</Card.Text>
+            <Card.Text>⭐ {this.props.rating}</Card.Text>
             <Card.Text >
               {this.props.description}
             </Card.Text>

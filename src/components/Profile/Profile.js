@@ -8,7 +8,6 @@ import WatchList from './WatchList';
 //css files
 import './profile.css';
 
-
 export class Profile extends Component {
   constructor(props){
     super(props);
@@ -21,7 +20,7 @@ export class Profile extends Component {
 
     const email = this.props.auth0.user.email ;
     console.log('email profile' ,email);
-    const url = (`http://localhost:3666/otakuzUser?email=${email}`);
+    const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
     const results = await axios.get(url);
     console.log('profile results' ,results.data);
     await this.setState({watchListData:results.data});
@@ -34,7 +33,7 @@ export class Profile extends Component {
       email:this.props.auth0.user.email,
     };
 
-    const results = await axios.delete(`http://localhost:3666/otakuzUser/${id}` , {params:query}) ;
+    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
     console.log('books after deletion',results);
     await this.setState({watchListData:results.data});
   }
@@ -46,7 +45,6 @@ export class Profile extends Component {
         <h1 id="header" >Watch List</h1>
         <hr></hr>
         <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} />
-
       </div>
     );
   }
