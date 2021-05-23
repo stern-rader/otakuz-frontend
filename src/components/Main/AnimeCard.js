@@ -37,7 +37,8 @@ export class AnimeCard extends Component {
       end:this.props.end,
       followers:0,
     };
-    await axios.post(`http://localhost:3666/otakuzUser/user-list` , animeData);
+    const test = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
+    console.log(test.data[0]._id);
   }
 
   deleteFromWatchList = async (index) => {
@@ -87,8 +88,6 @@ export class AnimeCard extends Component {
   }
 
   render() {
-    // const {loginWithRedirect} = this.props.auth0;
-    // this.props.showBtns ? this.setState({indexRemove:this.props.index})
     return (
       <>
         <Card key={this.props.index}>
