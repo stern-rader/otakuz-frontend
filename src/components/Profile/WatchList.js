@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 //created components
-import AnimeCard from './AnimeCard';
+import AnimeCard from '../Main/AnimeCard';
 
 //bootstrap components
 import {Row} from 'react-bootstrap';
 
-export class Results extends Component {
+export class WatchList extends Component {
   render() {
     console.log('anime props',this.props.animeResults);
     const results = this.props.animeResults.map((data,idx) => {
@@ -20,16 +20,17 @@ export class Results extends Component {
         // episodes={data.episodes}
         type={data.type}
         addToWatchList={this.props.addToWatchList}
-        showBtns={true}
+        showBtns={false}
         index={idx}
+        deleteFromWatchList={this.props.deleteFromWatchList}
       />;
     });
     return (
-      <Row style={{marginRight:'0px'}}>
+      <Row>
         {results}
       </Row>
     );
   }
 }
 
-export default Results;
+export default WatchList;
