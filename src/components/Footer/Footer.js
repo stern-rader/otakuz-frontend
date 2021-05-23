@@ -10,22 +10,20 @@ import './footer.css';
 export class Test extends Component {
   render() {
     return (
-      <div style={{marginTop:'25rem'}}>
+      <div style={{ marginTop: '25rem' }}>
         <MDBFooter id="footer" color="indigo" className="font-small lighten-3 pt-4 mt-4" >
           <MDBContainer className="text-center text-md-left" >
             <MDBRow className="my-4">
               <MDBCol md="4" lg="4">
                 <h5 className="text-uppercase mb-4 font-weight-bold">
-                MDBFooter Content
+                  OTAKUZ
                 </h5>
                 <p>
-                Here you can use rows and columns here to organize your footer
-                content.
+                  According to the regular users, our website is the best in terms of design, ease of use and content that you will like.
+
                 </p>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-                error amet numquam iure provident voluptate esse quasi,
-              veritatis totam voluptas nostrum.{' '}
+                  Therefore, do not hesitate to share the website with your friends to have fun and excitement..{' '}
                 </p>
               </MDBCol>
               <hr className="clearfix w-100 d-md-none" />
@@ -65,20 +63,20 @@ export class Test extends Component {
               <hr className="clearfix w-100 d-md-none" />
               <MDBCol md="2" lg="2" className="text-center">
                 <h5 className="text-uppercase mb-4 font-weight-bold">
-                Follow us
+                  Follow us
                 </h5>
                 <div className="mt-2 ">
                   <a type="button" className="btn-floating btn-small btn-fb">
-                    <i className="fab fa-facebook-f" />
+                    <i id="facebook" className="fab fa-facebook-f" />
                   </a>
                   <a type="button" className="btn-floating btn-small btn-tw">
-                    <i className="fab fa-twitter" />
+                    <i id="twitter" className="fab fa-twitter" />
                   </a>
                   <a type="button" className="btn-floating btn-small btn-gplus">
-                    <i className="fab fa-google-plus" />
+                    <i id="google" className="fab fa-google-plus" />
                   </a>
                   <a type="button" className="btn-floating btn-small btn-dribbble">
-                    <i className="fab fa-dribbble" />
+                    <i id="github" className="fab fa-github" />
                   </a>
                 </div>
               </MDBCol>
@@ -87,7 +85,7 @@ export class Test extends Component {
           </MDBContainer>
           <div className="footer-copyright text-center py-3">
             <MDBContainer fluid>
-            &copy; {new Date().getFullYear()} {' '}
+              &copy; {new Date().getFullYear()} {' '}
               <a href="https://www.MDBootstrap.com"> Otakuz </a>
             </MDBContainer>
           </div>
