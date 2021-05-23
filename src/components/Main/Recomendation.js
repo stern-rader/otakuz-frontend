@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
   MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdbreact';
 import './recomendations.css';
-
 export class Recomendation extends Component {
   render() {
     return (
       <MDBContainer style={{textAlign:'center'}}>
         <MDBCarousel showControls={true} activeItem={1} length={3} slide={true}  showIndicators={true} multiItem>
           <MDBCarouselInner>
-            <MDBRow>
+            <MDBRow style={{padding:'5px',border:'solid 0.5px , black'}}>
               <MDBCarouselItem itemId="1">
                 <div className='row'>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
+                      <MDBCardImage className="img-fluid" src="https://files.slack.com/files-pri/TNGRRLUMA-F022KDWREB0/cd17a0714a4f1dcd5a7d979d8bc25aec.png" />
                       <MDBCardBody>
                         <MDBCardTitle>MDBCard title</MDBCardTitle>
                         <MDBCardText>
