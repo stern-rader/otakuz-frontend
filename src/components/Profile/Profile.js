@@ -21,7 +21,6 @@ export class Profile extends Component {
   }
 
   async componentDidMount(){
-
     const email = this.props.auth0.user.email ;
     console.log('email profile' ,email);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
