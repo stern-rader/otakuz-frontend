@@ -14,7 +14,6 @@ export class Main extends Component {
     this.state = {
       showResults:false ,
       animeResults:[],
-      recomendationData:[]
     };
   }
   async componentDidMount(){

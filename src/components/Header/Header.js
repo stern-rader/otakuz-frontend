@@ -54,7 +54,8 @@ import {Nav , Button} from 'react-bootstrap';
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
 // //css files
-import './header.css';
+import '../Header/header.css';
+import Modal from './Modal';
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   constructor(props) {
@@ -62,6 +63,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     this.state = {
       collapse: false,
       isWideEnough: false,
+      panelSrc:'https://fsa.zobj.net/crop.php?r=z5JoMdZYUlRz3L1YAUuM8ywdjG6XkA2hmhI7ysxwTye68piGDbD9rFYJYzRfFDZrZbgewaJbQB4iuS5GUZkRERTvY8vE7DWMJofrqQWjakknVOGSHenr_dj0iJqdOlyMwamUiTUAi0NvAZC7',
+      modal8: false,
+      modal9: false
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -71,7 +75,19 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
       collapse: !this.state.collapse,
     });
   }
-
+  toggle = nr => () => {
+    let modalNumber = 'modal' + nr;
+    this.setState({
+      [modalNumber]: !this.state[modalNumber]
+    });
+  }
+  addNewPanel= (e) =>{
+    e.preventDefault();
+    this.setState({panelSrc:e.target.value});
+  }
+  saveNewPanel = (e)=>{
+    e.preventDefault();
+  }
   render() {
     const { isAuthenticated, loginWithRedirect, logout } = this.props.auth0;
     return (
@@ -93,7 +109,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                   </MDBNavItem>
                   <MDBNavItem>
                     {isAuthenticated &&
+                    <>
                       <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                    </>
                     }
                   </MDBNavItem>
                   <MDBNavItem>
@@ -112,13 +130,13 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             </MDBNavbar>
           </Router>
 
-          <MDBView src="https://fsa.zobj.net/crop.php?r=z5JoMdZYUlRz3L1YAUuM8ywdjG6XkA2hmhI7ysxwTye68piGDbD9rFYJYzRfFDZrZbgewaJbQB4iuS5GUZkRERTvY8vE7DWMJofrqQWjakknVOGSHenr_dj0iJqdOlyMwamUiTUAi0NvAZC7"  style={{height:'100vh'}}>
+          <MDBView src={this.state.panelSrc} style={{height:'100vh'}}>
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
               <div id='test'>
                 <div id="text">
                   <h2>Lorem Text</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    <h3></h3> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
               </div>
             </MDBMask>
@@ -128,6 +146,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
         <main>
           <MDBContainer className="text-center my-5">
             <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <Modal addNewPanel={this.addNewPanel} saveNewPanel={this.saveNewPanel}/>
           </MDBContainer>
         </main>
       </div>
