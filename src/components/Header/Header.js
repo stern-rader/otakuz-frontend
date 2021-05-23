@@ -92,7 +92,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                     <Nav.Link href="#features">Watch</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                    {isAuthenticated &&
+                      <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                    }
                   </MDBNavItem>
                   <MDBNavItem>
                     {!isAuthenticated &&
@@ -110,7 +112,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             </MDBNavbar>
           </Router>
 
-          <MDBView src="https://fsa.zobj.net/crop.php?r=z5JoMdZYUlRz3L1YAUuM8ywdjG6XkA2hmhI7ysxwTye68piGDbD9rFYJYzRfFDZrZbgewaJbQB4iuS5GUZkRERTvY8vE7DWMJofrqQWjakknVOGSHenr_dj0iJqdOlyMwamUiTUAi0NvAZC7" >
+          <MDBView src="https://fsa.zobj.net/crop.php?r=z5JoMdZYUlRz3L1YAUuM8ywdjG6XkA2hmhI7ysxwTye68piGDbD9rFYJYzRfFDZrZbgewaJbQB4iuS5GUZkRERTvY8vE7DWMJofrqQWjakknVOGSHenr_dj0iJqdOlyMwamUiTUAi0NvAZC7"  style={{height:'100vh'}}>
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
               <div id='test'>
                 <div id="text">

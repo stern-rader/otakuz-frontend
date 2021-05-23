@@ -25,7 +25,7 @@ class SliderTopRated extends React.Component {
         >
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
-              <MDBView>
+              <MDBView className="viewSlide" >
                 <img
                   className="d-block w-100"
                   src={hxh}
@@ -34,7 +34,7 @@ class SliderTopRated extends React.Component {
               </MDBView>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
-              <MDBView>
+              <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
                   src={aot}
@@ -43,7 +43,7 @@ class SliderTopRated extends React.Component {
               </MDBView>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
-              <MDBView>
+              <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
                   src={onepiece}
