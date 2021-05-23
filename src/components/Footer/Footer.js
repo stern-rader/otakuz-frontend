@@ -66,16 +66,16 @@ export class Test extends Component {
                   Follow us
                 </h5>
                 <div className="mt-2 ">
-                  <a type="button" className="btn-floating btn-small btn-fb">
+                  <a type="button" className="btn-floating btn-small btn-fb" href="#facebook">
                     <i id="facebook" className="fab fa-facebook-f" />
                   </a>
-                  <a type="button" className="btn-floating btn-small btn-tw">
+                  <a type="button" className="btn-floating btn-small btn-tw" href="#twitter">
                     <i id="twitter" className="fab fa-twitter" />
                   </a>
-                  <a type="button" className="btn-floating btn-small btn-gplus">
+                  <a type="button" className="btn-floating btn-small btn-gplus" href="#google">
                     <i id="google" className="fab fa-google-plus" />
                   </a>
-                  <a type="button" className="btn-floating btn-small btn-dribbble">
+                  <a type="button" className="btn-floating btn-small btn-dribbble" href="#github">
                     <i id="github" className="fab fa-github" />
                   </a>
                 </div>

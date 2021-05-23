@@ -6,7 +6,7 @@ export class Recomendation extends Component {
   render() {
     return (
       <MDBContainer style={{textAlign:'center'}}>
-        <MDBCarousel showControls={true} activeItem={1} length={3} slide={true}  showIndicators={true} multiItem>
+        <MDBCarousel showControls={true} activeItem={1} length={3} slide={true} showIndicators={true} multiItem>
           <MDBCarouselInner>
             <MDBRow style={{padding:'5px',border:'solid 0.5px , black'}}>
               <MDBCarouselItem itemId="1">

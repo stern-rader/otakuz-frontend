@@ -13,7 +13,7 @@ import {
   Switch,
   Route,
   BrowserRouter
-} from "react-router-dom";
+} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props){

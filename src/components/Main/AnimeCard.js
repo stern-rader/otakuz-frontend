@@ -23,6 +23,7 @@ export class AnimeCard extends Component {
   }
 
   addToWatchList = async() => {
+    console.log('entered the add function');
     // { email, name, url, img, description, rating, type, rate, start, end, followers }
     if(!this.props.auth0.isAuthenticated) this.props.auth0.loginWithRedirect();
     const animeData = {
@@ -38,11 +39,12 @@ export class AnimeCard extends Component {
       end:this.props.end,
       followers:0,
     };
-    const addAnime = await axios.post(`http://localhost:3666/otakuzUser` , animeData);
+    const addAnime = await axios.post(`http://localhost:3666/otakuzUser/user-list` , animeData);
     // await this.setState({books:postBook.data.books})
-    await this.setState({indexRemove:addAnime.data.length-1});
+    // await this.setState({indexRemove:addAnime.data.length-1});
     // console.log(addAn)
     console.log(addAnime);
+    console.log('got out of the function');
   }
 
   deleteFromWatchList = async (index) => {
