@@ -17,7 +17,6 @@ export class Profile extends Component {
   }
 
   async componentDidMount(){
-
     const email = this.props.auth0.user.email ;
     console.log('email profile' ,email);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
@@ -25,17 +24,6 @@ export class Profile extends Component {
     console.log('profile results' ,results.data);
     await this.setState({watchListData:results.data});
     console.log('anime list',this.state.animeResults);
-  }
-
-  deleteFromWatchList = async (index) => {
-    const id= index ;
-    const query = {
-      email:this.props.auth0.user.email,
-    };
-
-    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
-    console.log('books after deletion',results);
-    await this.setState({watchListData:results.data});
   }
 
   render() {
