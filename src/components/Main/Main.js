@@ -14,10 +14,11 @@ export class Main extends Component {
     this.state = {
       showResults:false ,
       animeResults:[],
+      recomendationData:[]
     };
   }
   async componentDidMount(){
-    const url = (`http://localhost:3666/topAnimes`);
+    const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
     const results = await axios.get(url);
     console.log(results.data);
     await this.setState({animeResults:results.data});
@@ -27,14 +28,14 @@ export class Main extends Component {
   showResults = async (event) => {
     event.preventDefault();
     console.log(event.target.animeName.value);
-    const url = (`http://localhost:3666/anime?q=${event.target.animeName.value}`);
+    const url = (`${process.env.REACT_APP__BACKEND_URL}/anime?q=${event.target.animeName.value}`);
     event.target.animeName.value='';
     const results = await axios.get(url);
     console.log(results.data);
     await this.setState({animeResults:results.data});
     console.log('anime list',this.state.animeResults);
-
   }
+  
   render() {
     return (
       <>

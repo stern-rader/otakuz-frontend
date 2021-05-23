@@ -13,7 +13,7 @@ export class Recomendation extends Component {
                 <div className='row'>
                   <MDBCol md="4">
                     <MDBCard className="mb-2">
-                      <MDBCardImage className="img-fluid" src="https://files.slack.com/files-pri/TNGRRLUMA-F022KDWREB0/cd17a0714a4f1dcd5a7d979d8bc25aec.png" />
+                      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
                       <MDBCardBody>
                         <MDBCardTitle>MDBCard title</MDBCardTitle>
                         <MDBCardText>

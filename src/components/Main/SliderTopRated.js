@@ -8,17 +8,14 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
   'mdbreact';
 //css files
 import './sliderTopRated.css';
-import hxh from './img/hxh.png';
-import aot from './img/AOT.png';
-import onepiece from './img/onepiece.png';
 
 class SliderTopRated extends React.Component {
   render() {
     return(
-      <MDBContainer>
+      <MDBContainer >
         <MDBCarousel
           activeItem={1}
-          length={3}
+          length={4}
           showControls={true}
           showIndicators={true}
           className="z-depth-1"
@@ -28,7 +25,7 @@ class SliderTopRated extends React.Component {
               <MDBView className="viewSlide" >
                 <img
                   className="d-block w-100"
-                  src={hxh}
+                  src='https://wallpapercave.com/wp/wp8115145.png'
                   alt="First slide"
                 />
               </MDBView>
@@ -37,7 +34,7 @@ class SliderTopRated extends React.Component {
               <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
-                  src={aot}
+                  src='https://wallpaperaccess.com/full/56212.jpg'
                   alt="Second slide"
                 />
               </MDBView>
@@ -46,7 +43,16 @@ class SliderTopRated extends React.Component {
               <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
-                  src={onepiece}
+                  src='https://preview.redd.it/dgvtt8k1inx61.jpg?width=1200&format=pjpg&auto=webp&s=28ed52789d860935d96bf00f56d81eb4c67129da'
+                  alt="Third slide"
+                />
+              </MDBView>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="4">
+              <MDBView className="viewSlide">
+                <img
+                  className="d-block w-100"
+                  src='https://www.justwatch.com/images/backdrop/180763325/s1920/hunter-x-hunter-the-last-mission'
                   alt="Third slide"
                 />
               </MDBView>
