@@ -1,50 +1,3 @@
-// import React, { Component } from 'react';
-// // auth library
-// import { withAuth0 } from '@auth0/auth0-react';
-
-// //bootstrap components
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Navbar, Form, Nav, Button } from 'react-bootstrap';
-// //css files
-// import './header.css';
-
-// export class Header extends Component {
-//   render() {
-//     const { isAuthenticated, loginWithRedirect, logout } = this.props.auth0;
-
-
-//     return (
-//       <>
-//         <Navbar bg="dark" variant="dark">
-//           <Navbar.Brand href="#home">Otakuz</Navbar.Brand>
-//           <Nav className="mr-auto" >
-//             <Nav.Link href="http://localhost:3000">Home</Nav.Link>
-//             <Nav.Link href="#features">Watch</Nav.Link>
-//             {isAuthenticated &&
-//             <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
-//             }
-//             <Nav.Link href="#pricing">About US</Nav.Link>
-//           </Nav>
-//           <Form inline>
-//             {!isAuthenticated &&
-//               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
-//             }
-//             {isAuthenticated &&
-//               <Button variant='outline-primary' id='logOut' onClick={() => {
-//                 logout({ returnTo: window.location.origin });
-//               }}
-//               > Log Out</Button>
-//             }
-//           </Form>
-//         </Navbar>
-
-//       </>
-//     );
-//   }
-// }
-
-// export default withAuth0(Header);
-
 
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
@@ -115,6 +68,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                     }
                   </MDBNavItem>
                   <MDBNavItem>
+                    <Nav.Link href="http://localhost:3000/aboutus">About Us</Nav.Link>
+                  </MDBNavItem>
+                  <MDBNavItem>
                     {!isAuthenticated &&
               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
                     }
@@ -132,11 +88,11 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
 
           <MDBView src={this.state.panelSrc} style={{height:'100vh'}}>
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-              <div id='test'>
+              <div id='textContainer'>
                 <div id="text">
                   <h2>Lorem Text</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
+                    Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
               </div>
             </MDBMask>
@@ -145,7 +101,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
 
         <main>
           <MDBContainer className="text-center my-5">
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p align="justify"></p>
             <Modal addNewPanel={this.addNewPanel} saveNewPanel={this.saveNewPanel}/>
           </MDBContainer>
         </main>

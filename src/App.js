@@ -6,6 +6,7 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/Profile/Profile';
+import AboutUS from './components/AboutUs/AboutUs';
 
 //route components
 import {
@@ -40,8 +41,11 @@ class App extends React.Component {
               </Route>
               <Route exact path='/profile'>
                 { isAuthenticated &&
-          <Profile test={this.test} />
+                <Profile test={this.test} />
                 }
+              </Route>
+              <Route exact path='/aboutus' >
+                <AboutUS />
               </Route>
             </Switch>
             < Footer />
