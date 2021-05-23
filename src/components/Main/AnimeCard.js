@@ -77,7 +77,7 @@ export class AnimeCard extends Component {
     // const {loginWithRedirect} = this.props.auth0;
     return (
       <>
-        <Card key={this.props.index}>
+        <Card id='animeCards' key={this.props.index}>
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
