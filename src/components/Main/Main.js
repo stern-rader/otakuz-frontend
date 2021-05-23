@@ -14,7 +14,6 @@ export class Main extends Component {
     this.state = {
       showResults:false ,
       animeResults:[],
-      recomendationData:[]
     };
   }
   async componentDidMount(){
@@ -35,7 +34,7 @@ export class Main extends Component {
     await this.setState({animeResults:results.data});
     console.log('anime list',this.state.animeResults);
   }
-  
+
   render() {
     return (
       <>
