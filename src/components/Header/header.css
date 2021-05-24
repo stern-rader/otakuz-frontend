@@ -53,3 +53,7 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 #text{
   margin-top: 7rem;
 }
+
+#panel:hover {
+  cursor:pointer;
+ }
