@@ -9,20 +9,27 @@ import {Row} from 'react-bootstrap';
 export class Results extends Component {
   render() {
     console.log('anime props',this.props.animeResults);
-    const results = this.props.animeResults.map(data => {
-      return <AnimeCard
-        title={data.title}
-        image_url={data.image_url}
-        synopsis={data.synopsis}
-        score={data.score}
-        start_date={data.start_date}
-        end_date={data.end_date}
-        episodes={data.episodes}
-        type={data.type}
-      />;
+    const results = this.props.animeResults.map((data,idx) => {
+      if(idx < 15){
+        return <AnimeCard
+          name={data.name}
+          img={data.img}
+          description={data.description}
+          rating={data.rating}
+          start={data.start}
+          end={data.end}
+          // episodes={data.episodes}
+          type={data.type}
+          addToWatchList={this.props.addToWatchList}
+          showBtns={true}
+          index={idx}
+          // id={data._id}
+          getAnimeData={this.props.getAnimeData}
+        />;}
+      else return false;
     });
     return (
-      <Row>
+      <Row style={{marginRight:'0px'}}>
         {results}
       </Row>
     );

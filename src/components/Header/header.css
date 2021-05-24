@@ -1,20 +1,55 @@
 /* Nav component */
 .mr-auto{
-  margin-left:35rem;
+  margin-left:25rem;
 }
 
 /* link components */
 a.nav-link {
   padding: 0.5rem;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 
-/* log in button */
-#logIn{
-  margin-left: 9rem;
+/* log in , out buttons*/
+
+#logIn {
+  margin-left: 18rem;
+  margin-top: 0;
+  height: 2.6rem;
+  margin-bottom: 0;
 }
 
-#logIn:hover
+
+ #logOut {
+  margin-left: 10rem;
+  margin-top: 0;
+  height: 2.6rem;
+  margin-bottom: 0;
+}
+
+#logIn:hover , #logOut:hover
 {
   background-color: white!important;
+}
+/*  */
+
+/* for the mdb header */
+.view{
+  height:85vh!important;
+}
+
+/* for the navigation bar  */
+nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
+  background-color: #00000079;
+}
+
+/* this to make the text clearer on the panel  */
+#textContainer{
+  background-color: rgba(0, 0, 0, 0.274);
+  width:100%;
+  height: 100%;
+  margin-top:4rem;
+}
+
+#text{
+  margin-top: 7rem;
 }

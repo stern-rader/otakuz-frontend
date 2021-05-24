@@ -1,0 +1,12 @@
+
+.card{
+  width: 19rem;
+  margin-left: 8rem;
+  padding: 2px;
+  border:solid 1 px black;
+  margin-top: 4rem;
+}
+
+img.card-img-top {
+  height: 17rem;
+}

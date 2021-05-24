@@ -1,68 +1,61 @@
 import React from 'react';
 
-//bootstrap components
-// import {Carousel} from 'react-bootstrap';
+//mdbreact components
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
   'mdbreact';
-
+//css files
+import './sliderTopRated.css';
 
 class SliderTopRated extends React.Component {
   render() {
     return(
-      <MDBContainer>
+      <MDBContainer >
         <MDBCarousel
           activeItem={1}
-          length={3}
+          length={4}
           showControls={true}
           showIndicators={true}
           className="z-depth-1"
         >
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
-              <MDBView>
+              <MDBView className="viewSlide" >
                 <img
                   className="d-block w-100"
-                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                  src='https://wallpapercave.com/wp/wp8115145.png'
                   alt="First slide"
                 />
-                <MDBMask overlay="black-light" />
               </MDBView>
-              <MDBCarouselCaption>
-                <h3 className="h3-responsive">Light mask</h3>
-                <p>First text</p>
-              </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
-              <MDBView>
+              <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
-                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                  src='https://wallpaperaccess.com/full/56212.jpg'
                   alt="Second slide"
                 />
-                <MDBMask overlay="black-strong" />
               </MDBView>
-              <MDBCarouselCaption>
-                <h3 className="h3-responsive">Strong mask</h3>
-                <p>Second text</p>
-              </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
-              <MDBView>
+              <MDBView className="viewSlide">
                 <img
                   className="d-block w-100"
-                  src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+                  src='https://preview.redd.it/dgvtt8k1inx61.jpg?width=1200&format=pjpg&auto=webp&s=28ed52789d860935d96bf00f56d81eb4c67129da'
                   alt="Third slide"
                 />
-                <MDBMask overlay="black-slight" />
               </MDBView>
-              <MDBCarouselCaption>
-                <h3 className="h3-responsive">Slight Mast</h3>
-                <p>Third text</p>
-              </MDBCarouselCaption>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="4">
+              <MDBView className="viewSlide">
+                <img
+                  className="d-block w-100"
+                  src='https://www.justwatch.com/images/backdrop/180763325/s1920/hunter-x-hunter-the-last-mission'
+                  alt="Third slide"
+                />
+              </MDBView>
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
