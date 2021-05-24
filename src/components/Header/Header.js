@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //mdreact components
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 //bootstrap components
-import {Nav , Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
 // //css files
@@ -53,20 +54,24 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             <MDBCollapse isOpen={this.state.collapse} navbar>
               <MDBNavbarNav left>
                 <MDBNavItem >
-                  <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
+                  {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link> */}
+                  <Link to={{pathname:'/'}}>Home</Link>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <Nav.Link href="#features">Watch</Nav.Link>
+                  {/* <Nav.Link href="#features">Watch</Nav.Link> */}
+                  <Link to={{pathname:'/'}}>Watch</Link>
                 </MDBNavItem>
                 <MDBNavItem>
                   {isAuthenticated &&
                     <>
-                      <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link>
+                      {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link> */}
+                      <Link to={{pathname:'/profile'}}>Profile</Link>
                     </>
                   }
                 </MDBNavItem>
                 <MDBNavItem>
-                  <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link>
+                  {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link> */}
+                  <Link to={{pathname:'/aboutus'}}>About Us</Link>
                 </MDBNavItem>
                 <MDBNavItem>
                   {!isAuthenticated &&
@@ -107,4 +112,4 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
 }
 
 export default withAuth0(FullPageIntroWithFixedTransparentNavbar);
-///////
+
