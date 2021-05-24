@@ -33,6 +33,7 @@ export class Main extends Component {
     const results = await axios.get(url);
     console.log(results.data);
     await this.setState({ animeResults: results.data , showTitle:false});
+    // console.log('id from main page' , results.data[0]._id );
     console.log('anime list', this.state.animeResults);
   }
 

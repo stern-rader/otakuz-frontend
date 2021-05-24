@@ -18,11 +18,12 @@ export class AnimeCard extends Component {
       likesClicking: 3,
       likeControl: 'ADD TO FAVORITE',
       like: '❤',
-      indexRemove:-1,
+      id:-1,
     };
   }
 
   addToWatchList = async() => {
+    console.log('id from results page' , this.props.id);
     if(!this.props.auth0.isAuthenticated) this.props.auth0.loginWithRedirect();
     const animeData = {
       email:this.props.auth0.user.email,
@@ -36,14 +37,16 @@ export class AnimeCard extends Component {
       start:this.props.start,
       end:this.props.end,
       followers:0,
+      // id:this.props.id
     };
     const test = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
-    console.log(test.data[0]._id);
+    await this.setState({id:test.data[test.data.length-1]._id});
+    console.log('id of the card' , this.state.id);
   }
 
   deleteFromWatchList = async (index) => {
-    console.log('props index' ,this.props.index);
-    const id= this.state.indexRemove;
+    // console.log('props index' ,this.props.index);
+    const id= this.props.name;
     const query = {
       email:this.props.auth0.user.email,
     };
@@ -51,7 +54,7 @@ export class AnimeCard extends Component {
     const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
     console.log('anime id' , id);
     console.log('animes after deletion',results.data);
-    await this.setState({indexRemove:this.state.indexRemove-1});
+    // await this.setState({indexRemove:this.state.indexRemove-1});
   }
 
   changeButtonValue = async () => {
@@ -94,7 +97,7 @@ export class AnimeCard extends Component {
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text>❤️ {this.props.rating}</Card.Text>
+            <Card.Text>⭐ {this.props.rating}</Card.Text>
             <Card.Text >
               {this.props.description}
             </Card.Text>
@@ -112,7 +115,7 @@ export class AnimeCard extends Component {
             }
             {!this.props.showBtns &&
             <>
-              <Button onClick={() => this.props.deleteFromWatchList(this.props.index)}>Remove from watch list</Button>
+              <Button onClick={() => this.props.deleteFromWatchList(this.props.name)}>Remove from watch list</Button>
             </>
             }
           </Card.Footer>
