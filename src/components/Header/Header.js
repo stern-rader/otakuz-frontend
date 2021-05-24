@@ -3,7 +3,6 @@ import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Nav , Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
@@ -96,15 +95,13 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                     {isAuthenticated &&
 
                     <>
-                      {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link> */}
-                      <Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Link>
+                      <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link>
                     </>
 
                     }
                   </MDBNavItem>
                   <MDBNavItem>
-                    {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link> */}
-                    <Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Link>
+                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     {!isAuthenticated &&
