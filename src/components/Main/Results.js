@@ -24,6 +24,7 @@ export class Results extends Component {
           showBtns={true}
           index={idx}
           // id={data._id}
+          getAnimeData={this.props.getAnimeData}
         />;}
       else return false;
     });

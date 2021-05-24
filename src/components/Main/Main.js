@@ -44,13 +44,13 @@ export class Main extends Component {
         <hr></hr>
         <SliderTopRated />
         <SearchBar showResults={this.showResults} />
-        {this.state.showTitle && 
+        {this.state.showTitle &&
         <>
           <h1 style={{textAlign:'center' , fontFamily:'auto'}} >Top Rated</h1>
           <hr></hr>
         </>
         }
-        <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList} />
+        <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList}  getAnimeData={this.props.getAnimeData} />
         <Recomendation />
       </>
     );
