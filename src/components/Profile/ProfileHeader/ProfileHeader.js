@@ -7,8 +7,8 @@ import {Nav , Button} from 'react-bootstrap';
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
 // //css files
-import '../Header/header.css';
-import Modal from './Modal';
+import './header.css';
+import Modal from '../../Header/Modal';
 import axios from 'axios';
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {
@@ -114,30 +114,18 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               </MDBCollapse>
             </MDBNavbar>
           </Router>
-          {window.location.href === `${process.env.REACT_APP__HOME_URL}/profile`?
-            <MDBView id='panel' src={this.state.panelSrc} style={{height:'100vh'}} title='Double click to Update Your Panel' onDoubleClick={this.toggle}>
-              <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-                <div id='textContainer'>
-                  <div id="text">
-                    <h2>Lorem Text</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
-                            Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
+
+          <MDBView id='panel' src={this.state.panelSrc} style={{height:'100vh'}} title='Double click to Update Your Profile Panel' onDoubleClick={this.toggle}>
+            <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
+              <div id='textContainer'>
+                <div id="text">
+                  <h2>Lorem Text</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
+                    Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-              </MDBMask>
-            </MDBView>
-            :
-            <MDBView src={this.state.panelSrc} style={{height:'100vh'}}>
-              <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-                <div id='textContainer'>
-                  <div id="text">
-                    <h2>Lorem Text</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
-                 Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                </div>
-              </MDBMask>
-            </MDBView> }
+              </div>
+            </MDBMask>
+          </MDBView>
         </header>
 
         <main>
