@@ -20,11 +20,13 @@ export class Main extends Component {
     };
   }
   async componentDidMount() {
+    await this.setState({waitReqs:true});
     const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
     const results = await axios.get(url);
     console.log('check the props' , results);
     await this.setState({ animeResults: results.data });
     console.log('anime list', this.state.animeResults);
+    await this.setState({waitReqs:false});
   }
 
   showResults = async (event) => {
