@@ -7,8 +7,8 @@ import {Nav , Button} from 'react-bootstrap';
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
 // //css files
-import '../Header/header.css';
-import Modal from './Modal';
+import './header.css';
+import Modal from '../../Header/Modal';
 import axios from 'axios';
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {
@@ -75,35 +75,32 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     return (
       <div>
         <header>
-
-          <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
-            <MDBNavbarBrand href="/">
-              <strong>Otakuz</strong>
-            </MDBNavbarBrand>
-            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-            <MDBCollapse isOpen={this.state.collapse} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem >
-                  <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <Nav.Link href="#features">Watch</Nav.Link>
-                </MDBNavItem>
-                <MDBNavItem>
-                  {isAuthenticated &&
-
+          <Router>
+            <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
+              <MDBNavbarBrand href="/">
+                <strong>Otakuz</strong>
+              </MDBNavbarBrand>
+              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+              <MDBCollapse isOpen={this.state.collapse} navbar>
+                <MDBNavbarNav left>
+                  <MDBNavItem >
+                    <Nav.Link href="http://localhost:3000">Home</Nav.Link>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <Nav.Link href="#features">Watch</Nav.Link>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    {isAuthenticated &&
                     <>
-                      <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link>
+                      <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
                     </>
-
-                  }
-                </MDBNavItem>
-                <MDBNavItem>
-                  <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link>
-                </MDBNavItem>
-                <MDBNavItem>
-                  {!isAuthenticated &&
-
+                    }
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <Nav.Link href="http://localhost:3000/aboutus">About Us</Nav.Link>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    {!isAuthenticated &&
               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
                     }
                     {isAuthenticated &&
@@ -117,30 +114,18 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               </MDBCollapse>
             </MDBNavbar>
           </Router>
-          {window.location.href === `${process.env.REACT_APP__HOME_URL}/profile`?
-            <MDBView id='panel' src={this.state.panelSrc} style={{height:'100vh'}} title='Double click to Update Your Panel' onDoubleClick={this.toggle}>
-              <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-                <div id='textContainer'>
-                  <div id="text">
-                    <h2>Lorem Text</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
-                            Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
+
+          <MDBView id='panel' src={this.state.panelSrc} style={{height:'100vh'}} title='Double click to Update Your Profile Panel' onDoubleClick={this.toggle}>
+            <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
+              <div id='textContainer'>
+                <div id="text">
+                  <h2>Lorem Text</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
+                    Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-              </MDBMask>
-            </MDBView>
-            :
-            <MDBView src={this.state.panelSrc} style={{height:'100vh'}}>
-              <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-                <div id='textContainer'>
-                  <div id="text">
-                    <h2>Lorem Text</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></br>
-                 Excepteur sint occaecat cupidatat non proident, <br></br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                </div>
-              </MDBMask>
-            </MDBView> }
+              </div>
+            </MDBMask>
+          </MDBView>
         </header>
 
         <main>
