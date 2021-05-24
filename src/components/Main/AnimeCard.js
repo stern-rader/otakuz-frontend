@@ -4,7 +4,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 //axios library
 import axios from 'axios';
 //bootstrap comonents
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button , Nav } from 'react-bootstrap';
 //css files
 import './animeCard.css';
 
@@ -97,7 +97,6 @@ export class AnimeCard extends Component {
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text>⭐ {this.props.rating}</Card.Text>
             <Card.Text >
               {this.props.description}
             </Card.Text>
@@ -109,8 +108,11 @@ export class AnimeCard extends Component {
           <Card.Footer>
             {this.props.showBtns &&
             <>
-              <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
-              <Button variant={this.state.variant} onClick={() => {this.changeButtonValue();}}>{this.state.buttonValue}</Button>
+              <div style={{textAlign:'center'}}>
+                <Nav.Link href="http://localhost:3000/animeprofile" style={{margin:'0' , padding:'0'}} ><Button onMouseOver={() => this.props.getAnimeData(this.props.img)} >Learn More</Button></Nav.Link>
+                <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
+                <Button variant={this.state.variant} onClick={() => {this.changeButtonValue();}}>{this.state.buttonValue}</Button>
+              </div>
             </>
             }
             {!this.props.showBtns &&

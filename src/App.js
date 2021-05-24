@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './components/Profile/Profile';
 import AboutUS from './components/AboutUs/AboutUs';
+import AnimeProfile from './components/Main/AnimeProfile';
 
 //route components
 import {
@@ -20,13 +21,13 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      test:[],
+      img_url:'',
     };
   }
 
-  addToWatchList = () => {
-    this.setState({test:[1,2,3,4]});
-    console.log(this.state.test);
+  getAnimeData = (imgUrl) => {
+    console.log(imgUrl);
+    this.setState({img_url:imgUrl});
   }
   render() {
     const { isAuthenticated } = this.props.auth0;
@@ -37,7 +38,7 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path='/' >
-                <Main addToWatchList={this.addToWatchList} />
+                <Main addToWatchList={this.addToWatchList} getAnimeData={this.getAnimeData} />
               </Route>
               <Route exact path='/profile'>
                 { isAuthenticated &&
@@ -46,6 +47,9 @@ class App extends React.Component {
               </Route>
               <Route exact path='/aboutus' >
                 <AboutUS />
+              </Route>
+              <Route exact path='/animeprofile' >
+                <AnimeProfile imgUrl={this.state.img_url} />
               </Route>
             </Switch>
             < Footer />
