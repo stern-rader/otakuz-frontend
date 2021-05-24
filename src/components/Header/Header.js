@@ -36,6 +36,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   // uploudaing new panel from the user
   addNewPanel= (e) =>{
     const selected = e.target.files[0];
+    console.log('selected image' , selected);
     let reader = new FileReader();
     reader.onloadend =()=>{
       this.setState({ PreviewImage:reader.result});
