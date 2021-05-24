@@ -75,6 +75,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     return (
       <div>
         <header>
+
           <Router>
             <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
@@ -84,23 +85,26 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem >
-                    <Nav.Link href="http://localhost:3000">Home</Nav.Link>
+                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     <Nav.Link href="#features">Watch</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     {isAuthenticated &&
+
                     <>
-                      <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
+                      <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link>
                     </>
+
                     }
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Nav.Link href="http://localhost:3000/aboutus">About Us</Nav.Link>
+                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     {!isAuthenticated &&
+
               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
                     }
                     {isAuthenticated &&
@@ -157,3 +161,4 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
 }
 
 export default withAuth0(FullPageIntroWithFixedTransparentNavbar);
+

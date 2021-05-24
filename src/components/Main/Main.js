@@ -22,7 +22,7 @@ export class Main extends Component {
   async componentDidMount() {
     const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
     const results = await axios.get(url);
-    console.log(results.data);
+    console.log('check the props' , results);
     await this.setState({ animeResults: results.data });
     console.log('anime list', this.state.animeResults);
   }

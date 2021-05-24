@@ -26,7 +26,7 @@ export class Profile extends Component {
     console.log('email profile' ,email);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
     const results = await axios.get(url);
-    console.log('profile results' ,results.data);
+    console.log('profile results' ,results);
     await this.setState({watchListData:results.data});
     console.log('anime list',this.state.animeResults);
   }
