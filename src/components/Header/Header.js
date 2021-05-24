@@ -1,9 +1,8 @@
-
 import React from 'react';
+//mdreact components
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+//bootstrap components
 import {Nav , Button} from 'react-bootstrap';
-
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
 // //css files
@@ -46,46 +45,43 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     return (
       <div>
         <header>
-          <Router>
-            <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
-              <MDBNavbarBrand href="/">
-                <strong>Otakuz</strong>
-              </MDBNavbarBrand>
-              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-              <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
-                  <MDBNavItem >
-                    <Nav.Link href="http://localhost:3000">Home</Nav.Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Nav.Link href="#features">Watch</Nav.Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    {isAuthenticated &&
+          <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
+            <MDBNavbarBrand href="/">
+              <strong>Otakuz</strong>
+            </MDBNavbarBrand>
+            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+            <MDBCollapse isOpen={this.state.collapse} navbar>
+              <MDBNavbarNav left>
+                <MDBNavItem >
+                  <Nav.Link href="http://localhost:3000">Home</Nav.Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Nav.Link href="#features">Watch</Nav.Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  {isAuthenticated &&
                     <>
                       <Nav.Link href="http://localhost:3000/profile">Profile</Nav.Link>
                     </>
-                    }
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <Nav.Link href="http://localhost:3000/aboutus">About Us</Nav.Link>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    {!isAuthenticated &&
+                  }
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Nav.Link href="http://localhost:3000/aboutus">About Us</Nav.Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  {!isAuthenticated &&
               <Button variant='outline-primary' id='logIn' onClick={loginWithRedirect} >Log In</Button>
-                    }
-                    {isAuthenticated &&
+                  }
+                  {isAuthenticated &&
               <Button variant='outline-primary' id='logOut' onClick={() => {
                 logout({ returnTo: window.location.origin });
               }}
               > Log Out</Button>
-                    }
-                  </MDBNavItem>
-                </MDBNavbarNav>
-              </MDBCollapse>
-            </MDBNavbar>
-          </Router>
-
+                  }
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBNavbar>
           <MDBView src={this.state.panelSrc} style={{height:'100vh'}}>
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
               <div id='textContainer'>

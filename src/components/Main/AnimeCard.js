@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 //auth library
 import { withAuth0 } from '@auth0/auth0-react';
 //axios library
 import axios from 'axios';
 //bootstrap comonents
-import { Card, Button , Nav } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 //css files
 import './animeCard.css';
 
@@ -46,7 +47,7 @@ export class AnimeCard extends Component {
 
   deleteFromWatchList = async (index) => {
     // console.log('props index' ,this.props.index);
-    const id= this.props.name;
+    const id= this.props._id;
     const query = {
       email:this.props.auth0.user.email,
     };
@@ -93,7 +94,7 @@ export class AnimeCard extends Component {
   render() {
     return (
       <>
-        <Card key={this.props.index}>
+        <Card key={this.props.index} onMouseOver={() => this.props.getAnimeData(this.props)}>
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
@@ -109,7 +110,7 @@ export class AnimeCard extends Component {
             {this.props.showBtns &&
             <>
               <div style={{textAlign:'center'}}>
-                <Nav.Link href="http://localhost:3000/animeprofile" style={{margin:'0' , padding:'0'}} ><Button onMouseOver={() => this.props.getAnimeData(this.props.img)} >Learn More</Button></Nav.Link>
+                <Link to={{pathname:'/animeprofile'}}><Button >Learn More</Button></Link>
                 <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
                 <Button variant={this.state.variant} onClick={() => {this.changeButtonValue();}}>{this.state.buttonValue}</Button>
               </div>
@@ -118,6 +119,7 @@ export class AnimeCard extends Component {
             {!this.props.showBtns &&
             <>
               <Button onClick={() => this.props.deleteFromWatchList(this.props.name)}>Remove from watch list</Button>
+              <Link to={{pathname:'/animeprofile'}}><Button >Learn More</Button></Link>
             </>
             }
           </Card.Footer>

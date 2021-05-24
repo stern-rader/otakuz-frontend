@@ -1,0 +1,17 @@
+/* the anime details container  */
+#detailsContainer
+{
+  margin-right: 0;
+  margin: 0;
+}
+/* anime image */
+img {
+  width: 25rem;
+  height: 25rem;
+}
+
+ 
+.reveiwSection{
+  margin-top: 5rem;
+  text-align: center;
+}
