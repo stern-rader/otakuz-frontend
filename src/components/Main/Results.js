@@ -23,6 +23,7 @@ export class Results extends Component {
           addToWatchList={this.props.addToWatchList}
           showBtns={true}
           index={idx}
+          // id={data._id}
         />;}
       else return false;
     });
