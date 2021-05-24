@@ -21,13 +21,14 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      img_url:'',
+      animeSelected:{},
     };
   }
 
-  getAnimeData = (imgUrl) => {
-    console.log(imgUrl);
-    this.setState({img_url:imgUrl});
+  getAnimeData = async (data) => {
+    console.log(data);
+    await this.setState({animeSelected:data});
+    console.log('state image' , data.img);
   }
   render() {
     const { isAuthenticated } = this.props.auth0;
@@ -42,14 +43,14 @@ class App extends React.Component {
               </Route>
               <Route exact path='/profile'>
                 { isAuthenticated &&
-                <Profile test={this.test} />
+                <Profile data={this.state.animeSelected} getAnimeData={this.getAnimeData} />
                 }
               </Route>
               <Route exact path='/aboutus' >
                 <AboutUS />
               </Route>
               <Route exact path='/animeprofile' >
-                <AnimeProfile imgUrl={this.state.img_url} />
+                <AnimeProfile data={this.state.animeSelected} />
               </Route>
             </Switch>
             < Footer />

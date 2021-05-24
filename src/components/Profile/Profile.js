@@ -52,7 +52,7 @@ export class Profile extends Component {
         {/* <Modal updateName={this.updateName}/> */}
         <h1 id="header" >Watch List</h1>
         <hr></hr>
-        <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} />
+        <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} data={this.props.data} getAnimeData={this.props.getAnimeData} />
       </div>
     );
   }

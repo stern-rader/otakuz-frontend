@@ -23,6 +23,8 @@ export class WatchList extends Component {
         showBtns={false}
         index={idx}
         deleteFromWatchList={this.props.deleteFromWatchList}
+        data={this.props.data}
+        getAnimeData={this.props.getAnimeData}
       />;
     });
     return (
