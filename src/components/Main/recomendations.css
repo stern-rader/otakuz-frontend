@@ -7,17 +7,23 @@
 } */
 .fa-chevron-right:before {
   content: "\f054";
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .fa-chevron-left:before {
   content: "\f053";
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 
-/* .container, .container-md, .container-sm {
-    max-width: 720px;
-    margin-top: 10rem;
-} */
+
+.carousel carousel-multi-item
+{
+  margin-top: 10rem;
+}
+
+.carousel {
+  position: relative;
+  margin-top: 5rem;
+}
 
 

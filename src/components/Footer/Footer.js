@@ -32,7 +32,7 @@ export class Test extends Component {
                 <ul className="list-unstyled">
 
                   <p>
-                    <a href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>ABOUT US</a>
+                    <a href={`${process.env.REACT_APP__HOME_URL}/aboutus#aus`}>ABOUT US</a>
                   </p>
 
                 </ul>
@@ -44,7 +44,7 @@ export class Test extends Component {
                   <i className="fa fa-home mr-3" /> Amman, Jordan
                 </p>
                 <p>
-                  <i className="fa fa-envelope mr-3" /> info@example.com
+                  <i className="fa fa-envelope mr-3" /> info@Otakuz.com
                 </p>
                 <p>
                   <i className="fa fa-phone mr-3" /> + 269 111 567 88
