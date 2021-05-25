@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import {Row , Col} from 'react-bootstrap';
 //css files
 import './animeProfile.css';
-// name: "Gintama°"
-// rating: 9.09
-// showBtns: true
-// start: "Apr 2015"
-// type: "TV"
+//created Components
+import Reviews from './Reviews';
+
 export class AnimeProfile extends Component {
   render() {
     console.log('inside the anime profile' , this.props.data);
@@ -27,6 +25,7 @@ export class AnimeProfile extends Component {
         <div class='reveiwSection' >
           <h1>Reveiws section</h1>
           <hr></hr>
+          <Reviews />
         </div>
       </>
 
