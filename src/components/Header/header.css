@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Oswald:wght@300&family=Signika:wght@300&display=swap" );
 /* Nav component */
 .mr-auto{
   margin-left:25rem;
@@ -7,8 +8,14 @@
 a.nav-link {
   padding: 0.5rem;
   margin-left: 4rem;
+  
 }
-
+.nav-link {
+  
+  transition: .35s;
+  /* color: #890596; */
+  font-weight: bold;
+}
 /* log in , out buttons*/
 
 #logIn {
@@ -16,19 +23,23 @@ a.nav-link {
   margin-top: 0;
   height: 2.6rem;
   margin-bottom: 0;
+  color: white!important;
+  font-weight: bold;
 }
 
 
- #logOut {
+#logOut {
   margin-left: 10rem;
   margin-top: 0;
   height: 2.6rem;
   margin-bottom: 0;
+  color: white!important;
+  font-weight: bold;
 }
 
 #logIn:hover , #logOut:hover
 {
-  background-color: white!important;
+  background-color: #1cc5dc!important;
 }
 /*  */
 
@@ -40,6 +51,7 @@ a.nav-link {
 /* for the navigation bar  */
 nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
   background-color: #00000079;
+ 
 }
 
 /* this to make the text clearer on the panel  */
@@ -48,6 +60,7 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
   width:100%;
   height: 100%;
   margin-top:4rem;
+  
 }
 
 #text{
@@ -56,4 +69,13 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 
 #panel:hover {
   cursor:pointer;
- }
+}
+#textContainer #text h2
+{
+  font-weight: bold;
+}
+#textContainer #text p
+{
+  font-family: 'Merriweather', serif;
+}
+ 

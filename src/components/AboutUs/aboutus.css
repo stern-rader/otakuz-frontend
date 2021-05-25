@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Oswald:wght@300&display=swap" );
+#us{
+    
+    font-weight: bold;
+    color:#53354a;
+    width: 60rem;
+    margin-left: 12rem;
+    text-align: center!important;
+    height: 10rem;
+    margin-top: 2rem;
+    
+   
+}
+#usH
+{
+    text-align: center!important;
+    color: #cf0000;
+    font-family: 'Merriweather', serif;
+}
+h1{
+    color: #cf0000;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    /* text-align: center!important; */
+}
