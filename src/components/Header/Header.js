@@ -119,7 +119,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               </MDBCollapse>
             </MDBNavbar>
           </Router>
-          {window.location.href === `${process.env.REACT_APP__HOME_URL}/profile`?
+          {window.location.href === 'http://localhost:3000/profile'?
             <MDBView id='panel' src={this.state.panelSrc} style={{height:'100vh'}} title='Double click to Update Your Panel' onDoubleClick={this.toggle}>
               <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
                 <div id='textContainer'>
