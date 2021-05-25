@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import SliderTopRated from './SliderTopRated';
 import SearchBar from './SearchBar';
 import Results from './Results';
-import Recomendation from './Recomendation';
+// import Recomendation from './Recomendation';
 import Loading from './Loading';
 //axios library
 import axios from 'axios';
@@ -57,7 +57,7 @@ export class Main extends Component {
           </>
         }
         <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList} getAnimeData={this.props.getAnimeData} />
-        <Recomendation />
+        {/* <Recomendation /> */}
       </>
     );
   }
