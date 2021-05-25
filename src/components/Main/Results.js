@@ -6,14 +6,14 @@ import AnimeCard from './AnimeCard';
 import SimilarCards from './SimilarCards';
 
 //bootstrap components
-import {Row} from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export class Results extends Component {
   render() {
-    if( window.location.href === 'http://localhost:3000/'){
-      console.log('anime props',this.props.animeResults);
-      const results = this.props.animeResults.map((data,idx) => {
-        if(idx < 15){
+    if (window.location.href === 'http://localhost:3000/') {
+      console.log('anime props', this.props.animeResults);
+      const results = this.props.animeResults.map((data, idx) => {
+        if (idx < 15) {
           return <AnimeCard
             name={data.name}
             img={data.img}
@@ -28,18 +28,19 @@ export class Results extends Component {
             index={idx}
             // id={data._id}
             getAnimeData={this.props.getAnimeData}
-          />;}
+          />;
+        }
         else return false;
       });
       return (
-        <Row style={{marginRight:'0px'}}>
+        <Row style={{ marginRight: '0px' }}>
           {results}
         </Row>
       );
     }
-    else if (window.location.href === 'http://localhost:3000/animeprofile'){
-      const similerResults = this.props.similarAnimesData.map((data,idx) => {
-        if(idx < 15){
+    else if (window.location.href === 'http://localhost:3000/animeprofile') {
+      const similerResults = this.props.similarAnimesData.map((data, idx) => {
+        if (idx < 15) {
           return <SimilarCards
             similarAnimesData={this.props.similarAnimesData}
             name={data.name}
@@ -55,14 +56,18 @@ export class Results extends Component {
             index={idx}
             // id={data._id}
             getAnimeData={this.props.getAnimeData}
-          />;}
+          />;
+        }
         else return false;
       });
-      return(
-        <Row style={{marginRight:'0px'}}>
+      return (
+        <Row style={{ marginRight: '0px' }}>
           {similerResults}
         </Row>
       );
+    }
+    else {
+      return false;
     }
   }
 }
