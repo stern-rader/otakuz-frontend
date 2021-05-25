@@ -5,7 +5,7 @@ import './aboutus.css';
 export class AboutUs extends Component {
   render() {
     return (
-      <div>
+      <div id="aus">
         <h1 id="usH">About Us</h1>
         <p id="us">
           Otakuz is one of the popular anime websites that allows you to watch the most recent and all-time favorite anime easily.

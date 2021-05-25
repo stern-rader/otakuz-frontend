@@ -78,4 +78,6 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 {
   font-family: 'Merriweather', serif;
 }
- 
+.black {
+  background-color: #212121 !important;
+}

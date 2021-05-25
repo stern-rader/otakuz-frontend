@@ -79,8 +79,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
         <header>
 
           <Router>
+            {/* <img src={logo} alt="" /> */}
             <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
-              <MDBNavbarBrand href="/">
+              <MDBNavbarBrand >
                 <strong>Otakuz</strong>
                 {/* <img src={logo} alt="" /> */}
               </MDBNavbarBrand>
