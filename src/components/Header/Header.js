@@ -3,6 +3,8 @@ import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Nav, Button } from 'react-bootstrap';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 // import logo from './logo.png';
 
 //  auth library
@@ -89,22 +91,35 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem >
-                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
+                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}#search`} >Home</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Nav.Link href="#features">Watch</Nav.Link>
+                    {/* <Nav.Link href="#features">Watch</Nav.Link> */}
+                    <Dropdown >
+                      <Dropdown.Toggle size="sm" color="red">
+
+                        Watch
+
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="https://www.animelab.com/">animelab</Dropdown.Item>
+                        <Dropdown.Item href="https://animetake.tv/">animetake</Dropdown.Item>
+                        <Dropdown.Item href="https://animedia.netlify.app/">animedia</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </MDBNavItem>
                   <MDBNavItem>
                     {isAuthenticated &&
 
                       <>
-                        <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile`} >Profile</Nav.Link>
+                        <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/profile#watchHeader`} >Profile</Nav.Link>
                       </>
 
                     }
                   </MDBNavItem>
                   <MDBNavItem>
-                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus`}>About Us</Nav.Link>
+                    <Nav.Link href={`${process.env.REACT_APP__HOME_URL}/aboutus#aus`}>About Us</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
                     {!isAuthenticated &&

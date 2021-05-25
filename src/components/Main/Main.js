@@ -48,7 +48,7 @@ export class Main extends Component {
         <h1 style={{ textAlign: 'center', fontFamily: 'auto' }} >Highly Recommended</h1>
         <hr></hr>
         <SliderTopRated />
-        <SearchBar showResults={this.showResults} />
+        <SearchBar id="search" showResults={this.showResults} />
         <Loading wait={this.state.waitReqs} />
         {this.state.showTitle &&
           <>
