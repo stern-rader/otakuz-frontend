@@ -20,3 +20,10 @@
   border-radius: 0.4rem;
  background-color:  #1cc5dc!important;
 }
+
+#searchButton{
+background-color: #1cc5dc;
+color: white;
+border-color: #1cc5dc
+;
+}
