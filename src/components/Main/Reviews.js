@@ -8,7 +8,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput } from 'mdbreac
 //boostrap components
 import {Row , Col} from 'react-bootstrap';
 //created components
-import SimilarAnimes from './SimilarAnimes';
+import Results from './Results';
 
 
 export class Reviews extends Component {
@@ -22,16 +22,24 @@ export class Reviews extends Component {
     };
   }
 
-  // async componentDidMount(){
-  //   const animeId = -1 ;
-  //   // console.log('email profile' ,animeId);
-  //   const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${animeId}`);
-  //   const animeData = await axios.get(url);
-  //   const urlSimilarAnimes = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/type=special`);
-  //   const similarAnimes = await axios.get(urlSimilarAnimes);
-  //   console.log('profile results' ,animeData);
-  //   await this.setState({reviews:animeData.data , similarAnimesData:similarAnimes.data});
-  // }
+
+  async componentDidMount(){
+    // const animeId = -1 ;
+    // console.log('email profile' ,animeId);
+    // const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${animeId}`);
+    // const animeData = await axios.get(url);
+    // const urlSimilarAnimes = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/special`);
+    // const similarAnimes = await axios.get(urlSimilarAnimes);
+    // console.log('profile results' ,animeData);
+    // await this.setState({ similarAnimesData:similarAnimes.data});
+    // console.log('similerAnime'+ similarAnimes.data);
+    const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
+    const results = await axios.get(url);
+    console.log('similarAnimesData' , results.data);
+    await this.setState({ similarAnimesData: results.data });
+
+  }
+
 
   addReview = async (event) => {
     // if(!this.props.auth0.isAuthenticated) this.props.auth0.loginWithRedirect();
@@ -86,6 +94,7 @@ export class Reviews extends Component {
     });
     return (
       <>
+
         <Row>
           <Col>
             <div>{reviewsData}</div>
@@ -112,7 +121,8 @@ export class Reviews extends Component {
             </MDBContainer>
           </Col>
         </Row>
-        <SimilarAnimes similarAnimesData={this.similarAnimesData} />
+        <Results similarAnimesData={this.state.similarAnimesData} />
+
       </>
 
     );

@@ -12,3 +12,13 @@ img.d-block.w-100 {
   width: 7rem;
   height: 7rem;
 }
+.carousel-control-next
+{
+  background-color: black;
+  width: 3rem;
+}
+.carousel-control-prev
+{
+  background-color: black;
+  width: 3rem;
+}

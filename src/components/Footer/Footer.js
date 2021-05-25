@@ -30,18 +30,11 @@ export class Test extends Component {
               <MDBCol md="2" lg="2" className="ml-auto">
                 <h5 className="text-uppercase mb-4 font-weight-bold">About</h5>
                 <ul className="list-unstyled">
+
                   <p>
-                    <a href="#!">PROJECTS</a>
+                    <a href={`${process.env.REACT_APP__HOME_URL}/aboutus#aus`}>ABOUT US</a>
                   </p>
-                  <p>
-                    <a href="#!">ABOUT US</a>
-                  </p>
-                  <p>
-                    <a href="#!">BLOG</a>
-                  </p>
-                  <p>
-                    <a href="#!">AWARDS</a>
-                  </p>
+
                 </ul>
               </MDBCol>
               <hr className="clearfix w-100 d-md-none" />
@@ -51,7 +44,7 @@ export class Test extends Component {
                   <i className="fa fa-home mr-3" /> Amman, Jordan
                 </p>
                 <p>
-                  <i className="fa fa-envelope mr-3" /> info@example.com
+                  <i className="fa fa-envelope mr-3" /> info@Otakuz.com
                 </p>
                 <p>
                   <i className="fa fa-phone mr-3" /> + 269 111 567 88

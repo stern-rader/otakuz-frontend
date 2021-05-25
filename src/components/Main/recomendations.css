@@ -2,5 +2,33 @@
 .row .view{
   height:35vh!important;
 }
+/* .root.container.controls-top{
+  margin-top: 10rem;
+} */
+.fa-chevron-right:before {
+  content: "\f054";
+  font-size: 3rem;
+}
+.fa-chevron-left:before {
+  content: "\f053";
+  font-size: 3rem;
+}
+
+
+
+.carousel carousel-multi-item
+{
+  margin-top: 10rem;
+}
+
+.carousel {
+  position: relative;
+  margin-top: 5rem;
+}
+a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 5rem;
+}
 
 
