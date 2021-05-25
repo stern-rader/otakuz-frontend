@@ -1,0 +1,8 @@
+/* to make the icons on the left side */
+i.fa.fa-user.prefix {
+  left: 0;
+}
+
+i.fa.fa-pencil-alt.prefix {
+  left: 0;
+}
