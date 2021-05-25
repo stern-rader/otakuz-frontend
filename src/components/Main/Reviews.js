@@ -6,7 +6,7 @@ import './reviews.css';
 //mdb componens
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput } from 'mdbreact';
 //created components
-import SimilarAnimes from './SimilarAnimes';
+import Results from './Results';
 
 
 export class Reviews extends Component {
@@ -21,14 +21,20 @@ export class Reviews extends Component {
   }
 
   async componentDidMount(){
-    const animeId = -1 ;
+    // const animeId = -1 ;
     // console.log('email profile' ,animeId);
-    const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${animeId}`);
-    const animeData = await axios.get(url);
-    const urlSimilarAnimes = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/type=special`);
-    const similarAnimes = await axios.get(urlSimilarAnimes);
-    console.log('profile results' ,animeData);
-    await this.setState({reviews:animeData.data , similarAnimesData:similarAnimes.data});
+    // const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${animeId}`);
+    // const animeData = await axios.get(url);
+    // const urlSimilarAnimes = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/special`);
+    // const similarAnimes = await axios.get(urlSimilarAnimes);
+    // console.log('profile results' ,animeData);
+    // await this.setState({ similarAnimesData:similarAnimes.data});
+    // console.log('similerAnime'+ similarAnimes.data);
+    const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
+    const results = await axios.get(url);
+    console.log('similarAnimesData' , results.data);
+    await this.setState({ similarAnimesData: results.data });
+
   }
 
   addReview = async () => {
@@ -66,7 +72,7 @@ export class Reviews extends Component {
                 <p className="h5 text-center mb-4">Add your review</p>
                 <div className="grey-text">
                   <MDBInput label="Your name" icon="user" group type="text" validate error="wrong" success="right" onChange={this.onChangeName} />
-                  <MDBInput type="textarea" rows="2" label="Your message" icon="pencil-alt" onChange={this.onChangeComment} />
+                  <MDBInput type="textarea" rows="2" label="Your Review" icon="pencil-alt" onChange={this.onChangeComment} />
                 </div>
                 <div className="text-center">
                   <MDBBtn outline color="secondary" onClick={this.test} >
@@ -78,7 +84,7 @@ export class Reviews extends Component {
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        <SimilarAnimes similarAnimesData={this.similarAnimesData} />
+        <Results similarAnimesData={this.state.similarAnimesData} />
       </>
 
     );
