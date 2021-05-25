@@ -2,5 +2,22 @@
 .row .view{
   height:35vh!important;
 }
+/* .root.container.controls-top{
+  margin-top: 10rem;
+} */
+.fa-chevron-right:before {
+  content: "\f054";
+  font-size: 2rem;
+}
+.fa-chevron-left:before {
+  content: "\f053";
+  font-size: 2rem;
+}
+
+
+/* .container, .container-md, .container-sm {
+    max-width: 720px;
+    margin-top: 10rem;
+} */
 
 

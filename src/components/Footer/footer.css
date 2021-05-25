@@ -9,6 +9,7 @@
   height: 20rem;
   background-color: #212121!important;
   margin-bottom: -10rem!important;
+  /* background-color: #1cc5dc; */
 }
 
 #facebook
@@ -73,4 +74,8 @@
   height: 3rem; */
   border-radius: 100rem;
 
+}
+.text-uppercase
+{
+color: #890596;
 }
