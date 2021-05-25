@@ -20,12 +20,13 @@ export class AnimeProfile extends Component {
             <h3>Rating: {this.props.data.rating}</h3>
             <h3>start: {this.props.data.start}</h3>
             <h3>Type: {this.props.data.type}</h3>
+            <h3>id: {this.props.data.id}</h3>
           </Col>
         </Row>
         <div class='reveiwSection' >
           <h1>Reveiws section</h1>
           <hr></hr>
-          <Reviews />
+          <Reviews id={this.props.data.id}/>
         </div>
       </>
 

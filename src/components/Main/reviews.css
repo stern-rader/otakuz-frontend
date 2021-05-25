@@ -6,3 +6,47 @@ i.fa.fa-user.prefix {
 i.fa.fa-pencil-alt.prefix {
   left: 0;
 }
+/* d-block font-weight-bold name */
+/* test */
+body {
+  background: #eee
+}
+
+.date {
+  font-size: 11px
+}
+
+.comment-text {
+  font-size: 20px
+}
+
+.fs-12 {
+  font-size: 12px
+}
+
+.shadow-none {
+  box-shadow: none
+}
+
+.name {
+  color: #007bff;
+  font-size: 25px;
+}
+
+.cursor:hover {
+  color: blue
+}
+
+.cursor {
+  cursor: pointer
+}
+
+.textarea {
+  resize: none
+}
+
+
+/* review form */
+#reviewFormContainer{
+  margin-top:10rem;
+}

@@ -10,6 +10,7 @@ import { Row } from 'react-bootstrap';
 
 export class Results extends Component {
   render() {
+
     if (window.location.href === 'http://localhost:3000/') {
       console.log('anime props', this.props.animeResults);
       const results = this.props.animeResults.map((data, idx) => {
@@ -26,7 +27,7 @@ export class Results extends Component {
             addToWatchList={this.props.addToWatchList}
             showBtns={true}
             index={idx}
-            // id={data._id}
+            id={data.id}
             getAnimeData={this.props.getAnimeData}
           />;
         }
@@ -54,7 +55,7 @@ export class Results extends Component {
             addToWatchList={this.props.addToWatchList}
             showBtns={true}
             index={idx}
-            // id={data._id}
+            id={data.id}
             getAnimeData={this.props.getAnimeData}
           />;
         }
