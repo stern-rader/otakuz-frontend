@@ -21,8 +21,8 @@ export class Main extends Component {
       animeResults: [],
       showTitle: true,
       waitReqs: false,
-      active:11,
-      number:11,
+      active:6,
+      title:'tv',
     };
   }
   async componentDidMount() {
@@ -53,7 +53,7 @@ export class Main extends Component {
     const url = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/${type}`);
     const results = await axios.get(url);
     console.log('test type', results.data);
-    await this.setState({ animeResults: results.data , active:num });
+    await this.setState({ animeResults: results.data , active:num ,title:type });
   }
   render() {
     return (
@@ -65,7 +65,7 @@ export class Main extends Component {
         <Loading wait={this.state.waitReqs} />
         {this.state.showTitle &&
           <>
-            <h1 style={{ textAlign: 'center', fontFamily: 'auto', marginTop: '10rem' }} >Top Rated</h1>
+            <h1 style={{ textAlign: 'center', fontFamily: 'auto', marginTop: '10rem' }} >{this.state.title}</h1>
             <hr></hr>
           </>
         }
@@ -74,7 +74,7 @@ export class Main extends Component {
                 special
           </Pagination.Item>
           <Pagination.Item key={2} active={this.state.active===2} onClick={ () => this.getRatedAnimes(2,'bypopularity')}>
-          bypopularity
+          popular
           </Pagination.Item>
           <Pagination.Item key={3} active={this.state.active===3} onClick={ () => this.getRatedAnimes(3,'upcoming')}>
           upcoming
