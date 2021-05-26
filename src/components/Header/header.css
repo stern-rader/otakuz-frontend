@@ -104,3 +104,12 @@ img{
   font-size: 27px;
   margin-top: 162px;
 }
+
+
+li#afterLogo {
+  margin-left: 19rem;
+}
+
+img#logoSite {
+  width: 10rem;
+}

@@ -90,11 +90,11 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav LEFT>
                   <MDBNavItem >
-                    <strong><img src={logo} alt="" /></strong>
+                    <strong><img src={logo} alt="" id='logoSite' /></strong>
                     {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link> */}
 
                   </MDBNavItem>
-                  <MDBNavItem >
+                  <MDBNavItem id='afterLogo'>
                     <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
                   </MDBNavItem>
                   <MDBNavItem>
