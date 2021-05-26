@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Button } from 'react-bootstrap';
 //css files
 import './animeCard.css';
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBRow, MDBCol, MDBIcon } from
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBRow, MDBCol, MDBIcon, MDBCardFooter } from
   'mdbreact';
 import { Link } from 'react-router-dom';
 
@@ -110,6 +110,8 @@ export class AnimeCard extends Component {
               />
               <MDBCardBody>
                 <MDBCardTitle style={{textAlign:'center'}}>{this.props.name}</MDBCardTitle>
+              </MDBCardBody>
+              <MDBCardFooter>
                 {this.props.showBtns &&
               <>
                 <div style={{textAlign:'center'}}>
@@ -131,7 +133,8 @@ export class AnimeCard extends Component {
                     <MDBIcon icon='angle-double-right' className='ml-2' />
                   </h5>
                 </Link>
-              </MDBCardBody>
+                
+              </MDBCardFooter>
             </MDBCard>
           </MDBCol>
         </MDBRow>

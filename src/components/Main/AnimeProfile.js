@@ -47,11 +47,11 @@ export class AnimeProfile extends Component {
       <>
         <Row id='detailsContainer'>
           <Col>
-            <img src={this.state.animeDetails.img} alt='' />
+            <img src={this.state.animeDetails.img} alt='' className='animeImg' />
           </Col>
           <Col>
             <h1>{this.state.animeDetails.name}</h1>
-            <p>{this.state.animeDetails.description}</p>
+            <p className='animeDescription' >{this.state.animeDetails.description}</p>
             <h3>Rating: {this.state.animeDetails.rating}</h3>
             <h3>start: {this.state.animeDetails.start}</h3>
             <h3>Type: {this.state.animeDetails.type}</h3>

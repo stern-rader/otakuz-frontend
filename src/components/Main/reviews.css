@@ -83,13 +83,13 @@ body {
 }
 
 
-#container {
+.reviewContainer {
   width: 70px;
   height: 70px;
   border-radius: 100px;
   background: #333;
 }
-#name {
+.nameReviewer {
   width: 100%;
   text-align: center;
   color: white;
@@ -114,11 +114,13 @@ span.date.text-black-50 {
 
 
 .card-header.border-0.font-weight-bold.d-flex.justify-content-between {
-  width: 35rem;
+  width: 39rem;
 }
 
 .mb-5, .my-5 {
   margin: 0!important;
+  margin-left: 54px!important;
+  position: relative;
 }
 
 
@@ -127,10 +129,15 @@ span.date.text-black-50 {
   margin-left: 2rem;
 }
 
-#date
+.reviewDate
 {
-    font-size: 12px;
-    font-weight: 100;
+  font-size: 12px;
+  font-weight: 100;
+  position: absolute;
+  left: 100%;
+  top: 83%;
+  transform: translateX(-76%);
+  width: 7rem;
 }
 
 .mt-4, .my-4 {
@@ -140,4 +147,9 @@ span.date.text-black-50 {
 .card-header.border-0.font-weight-bold.d-flex.justify-content-between {
   height: 1rem;
   padding: 0;
+}
+
+p.reviewComment {
+  overflow-wrap: anywhere;
+  width: 23rem;
 }
