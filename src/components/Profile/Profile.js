@@ -22,8 +22,11 @@ export class Profile extends Component {
 
   async componentDidMount() {
     console.log(window.location.href);
-    const email = this.props.auth0.user.email;
-    console.log('email profile', email);
+
+    const email = this.props.auth0.user.email ;
+    console.log('user data' , this.props.auth0.user);
+    console.log('email profile' ,email);
+
     const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
     const results = await axios.get(url);
     console.log('profile results', results);

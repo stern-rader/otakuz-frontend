@@ -4,6 +4,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, M
 import './recomendations.css';
 export class SimilarCards extends Component {
   render() {
+
     const results = this.props.similarAnimesData.map((data) => {
       for (let i=0 ; i<21;i++ ){
         let sum = i+1;
@@ -40,6 +41,7 @@ export class SimilarCards extends Component {
         }
       }
     });
+
     return (
       <MDBContainer style={{textAlign:'center'}}>
         <MDBCarousel showControls={true} activeItem={1} length={this.props.similarAnimesData.length/3} slide={true} showIndicators={true} multiItem>

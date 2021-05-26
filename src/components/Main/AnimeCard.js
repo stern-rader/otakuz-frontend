@@ -41,7 +41,7 @@ export class AnimeCard extends Component {
       start:this.props.start,
       end:this.props.end,
       followers:0,
-      // id:this.props.id
+      id:this.props.id,
     };
     const watchListAnimes = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
     await this.setState({id:watchListAnimes.data[watchListAnimes.data.length-1]._id});
@@ -50,7 +50,7 @@ export class AnimeCard extends Component {
 
   deleteFromWatchList = async () => {
     // console.log('props index' ,this.props.index);
-    const id= this.state.id;
+    const id= this.props.id;
     const query = {
       email:this.props.auth0.user.email,
     };

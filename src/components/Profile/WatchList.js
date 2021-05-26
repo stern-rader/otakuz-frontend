@@ -22,7 +22,8 @@ export class WatchList extends Component {
         type={data.type}
         addToWatchList={this.props.addToWatchList}
         showBtns={false}
-        id={data._id}
+        idObj={data._id}
+        id={data.id}
         deleteFromWatchList={this.props.deleteFromWatchList}
         data={this.props.data}
         getAnimeData={this.props.getAnimeData}
