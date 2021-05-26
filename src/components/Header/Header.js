@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Nav, Button , NavDropdown} from 'react-bootstrap';
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 // import Dropdown from 'react-bootstrap/Dropdown';
-// import logo from './logo.png';
+import logo from './logo.png';
 
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
@@ -84,12 +84,16 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             {/* <img src={logo} alt="" /> */}
             <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand >
-                <strong>Otakuz</strong>
-                {/* <img src={logo} alt="" /> */}
+
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
+                <MDBNavbarNav LEFT>
+                  <MDBNavItem >
+                    <strong><img src={logo} alt="" /></strong>
+                    {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link> */}
+
+                  </MDBNavItem>
                   <MDBNavItem >
                     <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
                   </MDBNavItem>
@@ -135,8 +139,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
                 <div id='textContainer'>
                   <div id="text">
-                    <h2>Otakuz</h2>
-                    <p>Is a free anime website featuring some of the top animes such as Naruto, Attack on Titan, Yuri on Ice, etc.<br></br> It has a simple interface and hosts a massive collection of Asian dramas, anime.</p>
+                    <p>“Don’t give up, there’s no shame in falling down! True shame is to not stand up again!”<br></br>- Shintaro Midorima (Kuroko No Basket)</p>
                   </div>
                 </div>
               </MDBMask>
@@ -146,8 +149,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
                 <div id='textContainer'>
                   <div id="text">
-                    <h2>Otakuz</h2>
-                    <p>Is a free anime website featuring some of the top animes such as Naruto, Attack on Titan, Yuri on Ice, etc.<br></br> It has a simple interface and hosts a massive collection of Asian dramas, anime.</p>
+                    <p>“Don’t give up, there’s no shame in falling down! True shame is to not stand up again!”<br></br>- Shintaro Midorima (Kuroko No Basket)</p>
                   </div>
                 </div>
               </MDBMask>

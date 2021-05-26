@@ -13,3 +13,6 @@ ul.pagination {
 .pagination .page-item .page-link:hover{
   background-color: #4285F4;
 }
+#recomanded{
+  margin-top: 82px;
+}
