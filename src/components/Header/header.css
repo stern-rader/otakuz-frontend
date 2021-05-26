@@ -79,7 +79,7 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
   font-family: 'Merriweather', serif;
 }
 .black {
-  background-color: #212121 !important;
+  background-color: #838383 !important;
 }
 .nav-item .btn-primary.dropdown-toggle {
   background-color:#1cc5dc !important;
@@ -95,4 +95,21 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 
 .nav-item.dropdown {
   margin-left: 2rem;
+}
+
+img{
+  width: 187px;
+}
+#textContainer #text p {
+  font-size: 27px;
+  margin-top: 162px;
+}
+
+
+li#afterLogo {
+  margin-left: 19rem;
+}
+
+img#logoSite {
+  width: 10rem;
 }

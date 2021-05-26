@@ -58,14 +58,14 @@ export class Main extends Component {
   render() {
     return (
       <>
-        <h1 style={{ textAlign: 'center', fontFamily: 'auto' }} >Highly Recommended</h1>
+        <h1 id='recomanded' style={{ textAlign: 'center', fontFamily: 'auto' }} >Highly Recommended</h1>
         <hr></hr>
         <SliderTopRated />
         <SearchBar id="search" showResults={this.showResults} />
         <Loading wait={this.state.waitReqs} />
         {this.state.showTitle &&
           <>
-            <h1 style={{ textAlign: 'center', fontFamily: 'auto', marginTop: '10rem' }} >{this.state.title}</h1>
+            < h1 style={{ textAlign: 'center', fontFamily: 'auto', marginTop: '-2rem' }} >{this.state.title}</h1>
             <hr></hr>
           </>
         }

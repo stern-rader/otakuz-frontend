@@ -61,7 +61,7 @@ export class AnimeProfile extends Component {
         </Row>
         <Row>
           <div id='trailer'>
-            <iframe width="1000" height="1000" src={this.state.animeDetails.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="false" autostart="false" ></iframe>
+            <iframe width="1200" height="550" src={this.state.animeDetails.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="false" autostart="false" ></iframe>
           </div>
         </Row>
         <div id='reveiwSection' >
