@@ -153,3 +153,8 @@ p.reviewComment {
   overflow-wrap: anywhere;
   width: 23rem;
 }
+.html5-video-player .video-click-tracking, .html5-video-player .video-stream {
+  display: block;
+  width: 1000px;
+  height: 300px;
+}
