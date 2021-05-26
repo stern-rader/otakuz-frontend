@@ -9,6 +9,7 @@ import './animeProfile.css';
 import Reviews from './Reviews';
 import Loading from './Loading';
 
+
 export class AnimeProfile extends Component {
   constructor(props){
     super(props);
