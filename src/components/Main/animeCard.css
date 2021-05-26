@@ -5,6 +5,7 @@
   padding: 2px;
   border:solid 1 px black;
   margin-top: 4rem;
+  height: 30rem;
 }
 
 img.card-img-top {
@@ -16,5 +17,9 @@ img.card-img-top {
 }
 .fa-minus:before {
   color: white;
+}
+
+#reviewsAndFormContainer{
+  margin-top: 3rem;
 }
 

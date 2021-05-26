@@ -8,8 +8,10 @@ import Results from './Results';
 import Loading from './Loading';
 //axios library
 import axios from 'axios';
-
+//bootstrap components
 import Pagination from 'react-bootstrap/Pagination';
+//css files
+import './main.css';
 
 export class Main extends Component {
   constructor(props) {
@@ -41,7 +43,7 @@ export class Main extends Component {
     event.target.animeName.value = '';
     const results = await axios.get(url);
     console.log(results.data);
-    await this.setState({ animeResults: results.data, showTitle: false, waitReqs: false });
+    await this.setState({ animeResults: results.data, showTitle: false, waitReqs: false , active:0 });
     // console.log('id from main page' , results.data[0]._id );
     console.log('anime list', this.state.animeResults);
   }

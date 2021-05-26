@@ -112,14 +112,14 @@ export class Reviews extends Component {
 
           {/* <!-- Card header --> */}
           <div class="card-header border-0 font-weight-bold d-flex justify-content-between">
-            <p id='date' >{data.date}</p>
+            <p className='reviewDate' >{data.date}</p>
           </div>
 
           <div class="media mt-4 px-1">
             {/* <img class="card-img-100 d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" */}
             {/* alt="Generic placeholder " /> */}
-            <div id="container">
-              <div id="name">
+            <div className="reviewContainer">
+              <div className="nameReviewer">
                 {data.email[0]}
               </div>
             </div>
@@ -127,7 +127,7 @@ export class Reviews extends Component {
               <h5 class="font-weight-bold mt-0">
                 <a href="#h">{data.email}</a>
               </h5>
-              <p id='comment' >{data.comment}</p>
+              <p className='reviewComment' >{data.comment}</p>
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export class Reviews extends Component {
     return (
       <>
 
-        <Row>
+        <Row id='reviewsAndFormContainer'>
           <Col id='reviewsCol'>
             <div>{reviewsData}</div>
           </Col>
