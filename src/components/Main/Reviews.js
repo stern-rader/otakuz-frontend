@@ -88,12 +88,12 @@ export class Reviews extends Component {
     if(m<10) m= '0'+m;
 
 
-    let weekdayNames = new Array("Sun", "Mon", "Tuey",
-      "Wed", "Thu", "Fri", "Sat");
+    let weekdayNames = ['Sun', 'Mon', 'Tuey',
+      'Wed', 'Thu', 'Fri', 'Sat'];
 
-    let monthNames = new Array("Jan", "Feb", "Mar", 
-      "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
-      "Oct", "Nov", "Dec");
+    let monthNames = ['Jan', 'Feb', 'Mar',
+      'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+      'Oct', 'Nov', 'Dec'];
 
     //var dateString = now.toLocaleDateString();
     let weekday = weekdayNames[now.getDay()];
@@ -108,24 +108,24 @@ export class Reviews extends Component {
       return (
 
 
-        <section class="my-5">
+        <section class='my-5'>
 
           {/* <!-- Card header --> */}
-          <div class="card-header border-0 font-weight-bold d-flex justify-content-between">
+          <div class='card-header border-0 font-weight-bold d-flex justify-content-between'>
             <p className='reviewDate' >{data.date}</p>
           </div>
 
-          <div class="media mt-4 px-1">
-            {/* <img class="card-img-100 d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" */}
-            {/* alt="Generic placeholder " /> */}
-            <div className="reviewContainer">
-              <div className="nameReviewer">
+          <div class='media mt-4 px-1'>
+            {/* <img class='card-img-100 d-flex z-depth-1 mr-3' src='https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg' */}
+            {/* alt='Generic placeholder ' /> */}
+            <div className='reviewContainer'>
+              <div className='nameReviewer'>
                 {data.email[0]}
               </div>
             </div>
-            <div class="media-body">
-              <h5 class="font-weight-bold mt-0">
-                <a href="#h">{data.email}</a>
+            <div class='media-body'>
+              <h5 class='font-weight-bold mt-0'>
+                <a href='#h'>{data.email}</a>
               </h5>
               <p className='reviewComment' >{data.comment}</p>
             </div>
@@ -146,17 +146,17 @@ export class Reviews extends Component {
           <Col id='formCol' >
             <MDBContainer id='reviewFormContainer' >
               <MDBRow>
-                <MDBCol md="6">
+                <MDBCol md='6'>
                   <form onSubmit={this.addReview} id='reviewForm' >
-                    {/* <p className="h5 text-center mb-4">Add your review</p> */}
-                    <div className="grey-text">
-                      <MDBInput label="Your name" icon="user" group type="text" validate error="wrong" success="right" onChange={this.onChangeName} name='name'/>
-                      <MDBInput type="textarea" rows="2" label="Your Review" icon="pencil-alt" onChange={this.onChangeComment} name='comment' />
+                    {/* <p className='h5 text-center mb-4'>Add your review</p> */}
+                    <div className='grey-text'>
+                      <MDBInput label='Your name' icon='user' group type='text' validate error='wrong' success='right' onChange={this.onChangeName} name='name'/>
+                      <MDBInput type='textarea' rows='2' label='Your Review' icon='pencil-alt' onChange={this.onChangeComment} name='comment' />
                     </div>
-                    <div className="text-center">
-                      <MDBBtn outline color="secondary" type='submit' >
+                    <div className='text-center'>
+                      <MDBBtn outline color='secondary' type='submit' >
                     Add
-                        <MDBIcon far icon="paper-plane" className="ml-1" />
+                        <MDBIcon far icon='paper-plane' className='ml-1' />
                       </MDBBtn>
                     </div>
                   </form>
@@ -178,28 +178,28 @@ export default Reviews;
 
 
 
-// <div class="container mt-5">
-// <div class="d-flex justify-content-center row">
-//   <div class="col-md-8">
-//     <div class="d-flex flex-column comment-section">
-//       <div class="bg-white p-2">
-//         <div class="d-flex flex-row user-info">
-//           <div id="container">
-//             <div id="name">
+// <div class='container mt-5'>
+// <div class='d-flex justify-content-center row'>
+//   <div class='col-md-8'>
+//     <div class='d-flex flex-column comment-section'>
+//       <div class='bg-white p-2'>
+//         <div class='d-flex flex-row user-info'>
+//           <div id='container'>
+//             <div id='name'>
 //               {data.email[0]}
 //             </div>
 //           </div>
-//           <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{data.email}</span><span class="date text-black-50"> Jan 2020</span></div>
+//           <div class='d-flex flex-column justify-content-start ml-2'><span class='d-block font-weight-bold name'>{data.email}</span><span class='date text-black-50'> Jan 2020</span></div>
 //         </div>
-//         <div class="mt-2">
-//           <p class="comment-text">{data.comment}</p>
+//         <div class='mt-2'>
+//           <p class='comment-text'>{data.comment}</p>
 //         </div>
 //       </div>
-//       <div class="bg-white">
+//       <div class='bg-white'>
 
 //       </div>
-//       <div class="bg-light p-2">
-//         <div class="d-flex flex-row align-items-start"></div>
+//       <div class='bg-light p-2'>
+//         <div class='d-flex flex-row align-items-start'></div>
 
 //       </div>
 //     </div>

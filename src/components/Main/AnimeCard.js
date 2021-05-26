@@ -133,7 +133,7 @@ export class AnimeCard extends Component {
                     <MDBIcon icon='angle-double-right' className='ml-2' />
                   </h5>
                 </Link>
-                
+
               </MDBCardFooter>
             </MDBCard>
           </MDBCol>

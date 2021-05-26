@@ -38,6 +38,7 @@ export class SimilarCards extends Component {
         else{
           name.push(data.name);
           img.push(data.img);
+          return false ;
         }
       }
     });
