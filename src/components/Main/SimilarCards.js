@@ -4,6 +4,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, M
 import './recomendations.css';
 export class SimilarCards extends Component {
   render() {
+
     return (
       <MDBContainer style={{textAlign:'center'}}>
         <MDBCarousel showControls={true} activeItem={1} length={3} slide={true} showIndicators={true} multiItem>

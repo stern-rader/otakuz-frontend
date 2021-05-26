@@ -12,6 +12,11 @@ body {
   background: #eee
 }
 
+/* user image */
+.rounded-circle{
+  width: 6rem;
+  height: 6rem;
+}
 .date {
   font-size: 11px
 }
@@ -49,4 +54,90 @@ body {
 /* review form */
 #reviewFormContainer{
   margin-top:10rem;
+}
+
+#reviewForm{
+  width:25rem;
+}
+
+#reviewsCol
+{
+  width: 50%;
+}
+
+#formCol{
+  width:30%;
+}
+
+.container.mt-5 {
+  width: 58rem;
+  padding:0;
+  margin-left:0;
+  margin-right: 0;
+}
+
+.col-md-6 {
+  position: absolute;
+  left: 80%;
+  transform: translateX(-100%);
+}
+
+
+#container {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background: #333;
+}
+#name {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  line-height: 73px;
+}
+
+.d-flex.flex-column.justify-content-start.ml-2 {
+  margin-top: 1.5rem;
+}
+
+span.date.text-black-50 {
+  position: absolute;
+  left: 90%;
+  transform: translateX(-100%);
+}
+
+
+.media.mt-4.px-1 {
+  width: 37rem;
+}
+
+
+.card-header.border-0.font-weight-bold.d-flex.justify-content-between {
+  width: 35rem;
+}
+
+.mb-5, .my-5 {
+  margin: 0!important;
+}
+
+
+.media-body {
+  text-align: justify;
+  margin-left: 2rem;
+}
+
+#date
+{
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.mt-4, .my-4 {
+  margin-bottom: 1rem;
+}
+
+.card-header.border-0.font-weight-bold.d-flex.justify-content-between {
+  height: 1rem;
+  padding: 0;
 }
