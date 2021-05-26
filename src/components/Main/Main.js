@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import SliderTopRated from './SliderTopRated';
 import SearchBar from './SearchBar';
 import Results from './Results';
-import Recomendation from './Recomendation';
+// import Recomendation from './Recomendation';
 import Loading from './Loading';
 //axios library
 import axios from 'axios';
@@ -59,7 +59,7 @@ export class Main extends Component {
         <h1 style={{ textAlign: 'center', fontFamily: 'auto' }} >Highly Recommended</h1>
         <hr></hr>
         <SliderTopRated />
-        <SearchBar showResults={this.showResults} />
+        <SearchBar id="search" showResults={this.showResults} />
         <Loading wait={this.state.waitReqs} />
         {this.state.showTitle &&
           <>
@@ -88,7 +88,7 @@ export class Main extends Component {
           </Pagination.Item>
         </Pagination>
         <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList} getAnimeData={this.props.getAnimeData} />
-        <Recomendation />
+        {/* <Recomendation /> */}
       </>
     );
   }

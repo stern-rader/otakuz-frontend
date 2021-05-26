@@ -81,3 +81,14 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 .black {
   background-color: #212121 !important;
 }
+.nav-item .btn-primary.dropdown-toggle {
+  background-color:#1cc5dc !important;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: -.02rem;
+  
+}
+.dropdown .dropdown-toggle 
+{
+  margin-left: 2rem;
+}

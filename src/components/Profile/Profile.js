@@ -9,50 +9,52 @@ import WatchList from './WatchList';
 import './profile.css';
 // import Modal from './Modal';
 export class Profile extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      watchListData:[],
-      name:'',
-      profilePic:'',
-      watchedAnimeNumber:'',
-      favoriteAnime:'',
+      watchListData: [],
+      name: '',
+      profilePic: '',
+      watchedAnimeNumber: '',
+      favoriteAnime: '',
     };
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     console.log(window.location.href);
+
     const email = this.props.auth0.user.email ;
     console.log('user data' , this.props.auth0.user);
     console.log('email profile' ,email);
+
     const url = (`${process.env.REACT_APP__BACKEND_URL}/otakuzUser?email=${email}`);
     const results = await axios.get(url);
-    console.log('profile results' ,results);
-    await this.setState({watchListData:results.data});
-    console.log('anime list',this.state.animeResults);
+    console.log('profile results', results);
+    await this.setState({ watchListData: results.data });
+    console.log('anime list', this.state.animeResults);
   }
 
   deleteFromWatchList = async (index) => {
-    const id= index ;
+    const id = index;
     const query = {
-      email:this.props.auth0.user.email,
+      email: this.props.auth0.user.email,
     };
 
-    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
-    console.log('books after deletion',results);
-    await this.setState({watchListData:results.data});
+    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}`, { params: query });
+    console.log('books after deletion', results);
+    await this.setState({ watchListData: results.data });
   }
 
   // updateName = (e)=>{this.setState({ name:e.target.value, });}
 
   render() {
-    console.log('profile' , this.props.test);
+    console.log('profile', this.props.test);
     return (
-      <div>
+      <div id="watchHeader">
 
         {/* <Modal updateName={this.updateName}/> */}
         <h1 id="header" >Watch List</h1>
-        <hr></hr>
+        <hr ></hr>
         <WatchList animeResults={this.state.watchListData} deleteFromWatchList={this.deleteFromWatchList} data={this.props.data} getAnimeData={this.props.getAnimeData} />
       </div>
     );

@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 //auth library
 import { withAuth0 } from '@auth0/auth0-react';
 //axios library
 import axios from 'axios';
 //bootstrap comonents
-import { Card, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 //css files
 import './animeCard.css';
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBRow, MDBCol, MDBIcon } from
+  'mdbreact';
+import { Link } from 'react-router-dom';
 
 export class AnimeCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonValue: 'Add To Watch List',
-      variant: 'primary',
+      icon: 'plus',
       favoriteClicking: 3,
       likesClicking: 3,
-      likeControl: 'ADD TO FAVORITE',
       like: '❤',
       id:-1,
+      title:'Add To Watch List',
+      variant:'primary'
     };
   }
 
@@ -63,15 +66,17 @@ export class AnimeCard extends Component {
     if (this.state.favoriteClicking % 2 === 0) {
       this.addToWatchList();
       this.setState({
-        buttonValue: 'Remove From Watch List',
-        variant: 'danger',
+        icon: '',
+        title:'Remove From Watch List',
+        variant:'danger'
       });
     }
     else {
       this.deleteFromWatchList(this.props.index);
       this.setState({
-        buttonValue: 'Add To Watch List',
-        variant: 'primary',
+        icon: 'plus',
+        title:'Add To Watch List',
+        variant:'primary'
       });
     }
   }
@@ -79,13 +84,11 @@ export class AnimeCard extends Component {
     await this.setState({ likesClicking: this.state.likesClicking + 1 });
     if (this.state.likesClicking % 2 === 0) {
       this.setState({
-        likeControl: 'REMOVE FROM FAVORITE',
         like: '❤️'
       });
     }
     else {
       this.setState({
-        likeControl: 'ADD TO FAVORITE',
         like: '❤',
       });
     }
@@ -94,39 +97,52 @@ export class AnimeCard extends Component {
   render() {
     return (
       <>
-        <Card key={this.props.index} onMouseOver={() => this.props.getAnimeData(this.props)}>
-          <Card.Img variant="top" src={this.props.img} />
-          <Card.Body>
-            <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text >
-              {this.props.description}
-            </Card.Text>
-            <Card.Text>Start Date : {this.props.start}</Card.Text>
-            <Card.Text>End Date : {this.props.end}</Card.Text>
-            <Card.Text>Type: {this.props.type}</Card.Text>
-          </Card.Body>
+        <MDBRow >
+          <MDBCol md="4">
+            <MDBCard key={this.props.index} onMouseOver={() => this.props.getAnimeData(this.props)}>
+              <MDBCardImage
+                top
+                src={this.props.img}
+                overlay='white-slight'
+                hover
+                waves
+                alt='MDBCard image cap'
+              />
+              <MDBCardBody>
+                <MDBCardTitle style={{textAlign:'center'}}>{this.props.name}</MDBCardTitle>
+                {this.props.showBtns &&
+              <>
+                <div style={{textAlign:'center'}}>
+                  <div style={{textAlign:'center'}}>
+                    <Button class='mainButtons' variant={this.state.variant} onClick={() => {this.changeButtonValue();}}><MDBIcon icon={this.state.icon} className='black-text'/> {this.state.title} </Button>
+                  </div>
+                </div>
+              </>
+                }
+                {!this.props.showBtns &&
+                <div style={{textAlign:'center'}}>
+                  <Button class='mainButtons' onClick={() => this.props.deleteFromWatchList(this.props.id)}>Remove</Button>
+                </div>
+                }
+                <hr />
+                <Link to={{pathname:'/animeprofile'}} href='/animeprofile' className='black-text d-flex justify-content-end'>
+                  <h5>
+              View Anime Details
+                    <MDBIcon icon='angle-double-right' className='ml-2' />
+                  </h5>
+                </Link>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
 
-          <Card.Footer>
-            {this.props.showBtns &&
-            <>
-              <div style={{textAlign:'center'}}>
-                <Link to={{pathname:'/animeprofile'}}><Button >Learn More</Button></Link>
-                <Button onClick={this.changeLikeColor}>{this.state.like} {this.state.likeControl}</Button>
-                <Button variant={this.state.variant} onClick={() => {this.changeButtonValue();}}>{this.state.buttonValue}</Button>
-              </div>
-            </>
-            }
-            {!this.props.showBtns &&
-            <>
-              <Button onClick={() => this.props.deleteFromWatchList(this.props.id)}>Remove from watch list</Button>
-              <Link to={{pathname:'/animeprofile'}}><Button >Learn More</Button></Link>
-            </>
-            }
-          </Card.Footer>
-        </Card>
+
+
       </>
     );
   }
 }
 
 export default withAuth0(AnimeCard);
+
+
