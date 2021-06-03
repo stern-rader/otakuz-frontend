@@ -41,12 +41,17 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     const selected = e.target.files[0];
     console.log('selected image', selected);
     let reader = new FileReader();
+    // localStorage.setItem('image' , JSON.stringify(reader.result));
     reader.onloadend = () => {
       this.setState({ PreviewImage: reader.result });
     };
     reader.readAsDataURL(selected);
   }
 
+  // componentDidMount() {
+  //   this.setState({PreviewImage:JSON.parse(localStorage.getItem('image'))});
+  //   console.log(localStorage.getItem('image'));
+  // }
   // saving the new panel from the user in the page
   saveNewPanel = (e) => {
     e.preventDefault();
@@ -75,6 +80,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   }
 
   render() {
+    console.log('the link in this page' ,window.location.href );
     const { isAuthenticated, loginWithRedirect, logout } = this.props.auth0;
     return (
       <div>

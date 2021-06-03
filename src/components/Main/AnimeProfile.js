@@ -16,7 +16,7 @@ export class AnimeProfile extends Component {
     this.state = {
       animeDetails:{},
       waitReqs:false,
-      id:-1,
+      id:this.props.data.id,
     };
   }
 
