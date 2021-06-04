@@ -89,7 +89,7 @@ export class Main extends Component {
           tv
           </Pagination.Item>
         </Pagination>
-        <Results animeResults={this.state.animeResults} addToWatchList={this.props.addToWatchList} getAnimeData={this.props.getAnimeData} />
+        <Results animeResults={this.state.animeResults} />
         {/* <Recomendation /> */}
       </>
     );

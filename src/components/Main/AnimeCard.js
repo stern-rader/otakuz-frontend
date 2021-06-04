@@ -99,7 +99,7 @@ export class AnimeCard extends Component {
       <>
         <MDBRow >
           <MDBCol md="4">
-            <MDBCard key={this.props.index} onMouseOver={() => this.props.getAnimeData(this.props)}>
+            <MDBCard key={this.props.index} >
               <MDBCardImage
                 top
                 src={this.props.img}
@@ -127,7 +127,7 @@ export class AnimeCard extends Component {
                 </div>
                 }
                 <hr />
-                <Link to={{pathname:'/animeprofile'}} href='/animeprofile' className='black-text d-flex justify-content-end'>
+                <Link to={{pathname:`/animeprofile/${this.props.id}`}} href='/animeprofile' className='black-text d-flex justify-content-end'>
                   <h5>
               View Anime Details
                     <MDBIcon icon='angle-double-right' className='ml-2' />

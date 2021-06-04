@@ -22,11 +22,9 @@ export class Results extends Component {
           end={data.end}
           // episodes={data.episodes}
           type={data.type}
-          addToWatchList={this.props.addToWatchList}
           showBtns={true}
           index={idx}
           id={data.id}
-          getAnimeData={this.props.getAnimeData}
         />;
       }
       else return false;

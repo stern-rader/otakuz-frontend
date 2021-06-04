@@ -25,8 +25,7 @@ export class WatchList extends Component {
         idObj={data._id}
         id={data.id}
         deleteFromWatchList={this.props.deleteFromWatchList}
-        data={this.props.data}
-        getAnimeData={this.props.getAnimeData}
+        // data={this.props.data}
       />;
     });
     return (

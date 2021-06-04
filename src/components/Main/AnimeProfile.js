@@ -8,7 +8,7 @@ import './animeProfile.css';
 //created Components
 import Reviews from './Reviews';
 import Loading from './Loading';
-
+import { withRouter } from "react-router"; 
 
 export class AnimeProfile extends Component {
   constructor(props){
@@ -16,29 +16,25 @@ export class AnimeProfile extends Component {
     this.state = {
       animeDetails:{},
       waitReqs:false,
-      id:this.props.data.id,
     };
   }
 
   async componentDidMount() {
-    const id = localStorage.getItem('id');
-    await this.setState({waitReqs:true , id:id});
+    // const urlOfPage = (window.location.href).split('/') ;
+    // const indexOfId = urlOfPage.indexOf('animeprofile') + 1 ;
+    const id = this.props.match.params.id;
+    console.log('the index using url '+id);
+    await this.setState({waitReqs:true});
     console.log('laaast id', id);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/do-review?id=${id}`);
     const results = await axios.get(url);
     await this.setState({animeDetails:results.data , waitReqs:false});
     console.log('result for the data', results.data);
-    // const urlReviews = (`${process.env.REACT_APP__BACKEND_URL}/reviews?id=${id}`);
-    // const reviews = await axios.get(urlReviews);
-    // console.log('get reviews ' ,reviews.data);
+
   }
 
   render() {
-    console.log('inside the anime profile' , this.props.data);
-    if (this.props.data.id) {
-      let learnMoreData = localStorage.setItem('id', this.props.data.id);
-      console.log(learnMoreData);
-    }
+    console.log('test id params ', this.props.match.params.id);
     return (
       <>
 
@@ -67,7 +63,7 @@ export class AnimeProfile extends Component {
         <div id='reveiwSection' >
           <h1>Reveiws</h1>
           <hr></hr>
-          <Reviews id={this.state.id}/>
+          <Reviews id={this.props.match.params.id}/>
         </div>
       </>
         }
@@ -77,4 +73,4 @@ export class AnimeProfile extends Component {
   }
 }
 
-export default AnimeProfile;
+export default withRouter(AnimeProfile);
