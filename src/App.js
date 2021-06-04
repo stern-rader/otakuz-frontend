@@ -18,18 +18,8 @@ import {
 } from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      animeSelected:{},
-    };
-  }
 
-  getAnimeData = async (data) => {
-    console.log(data);
-    await this.setState({animeSelected:data});
-    console.log('state image' , data.img);
-  }
+
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
@@ -39,18 +29,18 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path='/' >
-                <Main addToWatchList={this.addToWatchList} getAnimeData={this.getAnimeData} />
+                <Main />
               </Route>
               <Route exact path='/profile'>
                 { isAuthenticated &&
-                <Profile data={this.state.animeSelected} getAnimeData={this.getAnimeData} />
+                <Profile />
                 }
               </Route>
               <Route exact path='/aboutus' >
                 <AboutUS />
               </Route>
-              <Route exact path='/animeprofile' >
-                <AnimeProfile data={this.state.animeSelected} />
+              <Route exact path='/animeprofile/:id' >
+                <AnimeProfile />
               </Route>
             </Switch>
             < Footer />
