@@ -12,6 +12,11 @@
   margin-left: 3rem;
 }
 
+h1#watchLink {
+  margin-left: 11rem;
+  margin-top: 2rem;
+}
+
 .animeDescription{
   max-width: 37rem;
 }

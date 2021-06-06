@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 //axios library
 import axios from 'axios';
 //bootstrap components
-import {Row , Col} from 'react-bootstrap';
+import {Row , Col } from 'react-bootstrap';
 //css files
 import './animeProfile.css';
 //created Components
 import Reviews from './Reviews';
 import Loading from './Loading';
-import { withRouter } from "react-router"; 
+import { withRouter } from 'react-router';
 
 export class AnimeProfile extends Component {
   constructor(props){
@@ -16,6 +16,7 @@ export class AnimeProfile extends Component {
     this.state = {
       animeDetails:{},
       waitReqs:false,
+      watchPath:''
     };
   }
 
@@ -23,18 +24,21 @@ export class AnimeProfile extends Component {
     // const urlOfPage = (window.location.href).split('/') ;
     // const indexOfId = urlOfPage.indexOf('animeprofile') + 1 ;
     const id = this.props.match.params.id;
-    console.log('the index using url '+id);
+    // console.log('the index using url '+id);
     await this.setState({waitReqs:true});
-    console.log('laaast id', id);
+    // console.log('laaast id', id);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/do-review?id=${id}`);
     const results = await axios.get(url);
-    await this.setState({animeDetails:results.data , waitReqs:false});
-    console.log('result for the data', results.data);
+    const animeName = (results.data.name).split(' ').join('-');
+    const urlWatch = `https://www5.gogoanime.pro/search?keyword=${animeName}`;
+    // console.log('watch path '+ urlWatch);
+    await this.setState({animeDetails:results.data , waitReqs:false , watchPath:urlWatch});
+    // console.log('result for the data', results.data);
 
   }
 
   render() {
-    console.log('test id params ', this.props.match.params.id);
+    // console.log('test id params ', this.props.match.params.id);
     return (
       <>
 
@@ -45,6 +49,7 @@ export class AnimeProfile extends Component {
         <Row id='detailsContainer'>
           <Col>
             <img src={this.state.animeDetails.img} alt='' className='animeImg' />
+            <h1 id="watchLink"><a href={this.state.watchPath} >Watch</a></h1>
           </Col>
           <Col>
             <h1>{this.state.animeDetails.name}</h1>

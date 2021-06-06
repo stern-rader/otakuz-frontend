@@ -29,30 +29,30 @@ export class Main extends Component {
     await this.setState({ waitReqs: true });
     const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
     const results = await axios.get(url);
-    console.log('check the props', results);
+    // console.log('check the props', results);
     await this.setState({ animeResults: results.data });
-    console.log('anime list', this.state.animeResults);
+    // console.log('anime list', this.state.animeResults);
     await this.setState({ waitReqs: false });
   }
 
   showResults = async (event) => {
     await this.setState({ waitReqs: true });
     event.preventDefault();
-    console.log(event.target.animeName.value);
+    // console.log(event.target.animeName.value);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/anime?q=${event.target.animeName.value}`);
     event.target.animeName.value = '';
     const results = await axios.get(url);
-    console.log(results.data);
+    // console.log(results.data);
     await this.setState({ animeResults: results.data, showTitle: false, waitReqs: false , active:0 });
     // console.log('id from main page' , results.data[0]._id );
-    console.log('anime list', this.state.animeResults);
+    // console.log('anime list', this.state.animeResults);
   }
 
   getRatedAnimes = async (num,type) => {
-    console.log('clicked item');
+    // console.log('clicked item');
     const url = (`${process.env.REACT_APP__BACKEND_URL}/anime/top/${type}`);
     const results = await axios.get(url);
-    console.log('test type', results.data);
+    // console.log('test type', results.data);
     await this.setState({ animeResults: results.data , active:num ,title:type });
   }
   render() {
