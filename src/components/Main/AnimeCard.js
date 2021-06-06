@@ -27,7 +27,7 @@ export class AnimeCard extends Component {
   }
 
   addToWatchList = async() => {
-    console.log('id from results page' , this.props.id);
+    // console.log('id from results page' , this.props.id);
     if(!this.props.auth0.isAuthenticated) this.props.auth0.loginWithRedirect();
     const animeData = {
       email:this.props.auth0.user.email,
@@ -45,7 +45,7 @@ export class AnimeCard extends Component {
     };
     const watchListAnimes = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list` , animeData);
     await this.setState({id:watchListAnimes.data[watchListAnimes.data.length-1]._id});
-    console.log('id of the card' , this.state.id);
+    // console.log('id of the card' , this.state.id);
   }
 
   deleteFromWatchList = async () => {
@@ -55,9 +55,9 @@ export class AnimeCard extends Component {
       email:this.props.auth0.user.email,
     };
 
-    const results = await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
-    console.log('anime id' , id);
-    console.log('animes after deletion',results.data);
+    await axios.delete(`${process.env.REACT_APP__BACKEND_URL}/otakuzUser/user-list/${id}` , {params:query}) ;
+    // console.log('anime id' , id);
+    // console.log('animes after deletion',results.data);
     // await this.setState({indexRemove:this.state.indexRemove-1});
   }
 

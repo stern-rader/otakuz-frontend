@@ -80,7 +80,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   }
 
   render() {
-    console.log('the link in this page' ,window.location.href );
+    // console.log('the link in this page' ,window.location.href );
     const { isAuthenticated, loginWithRedirect, logout } = this.props.auth0;
     return (
       <div>

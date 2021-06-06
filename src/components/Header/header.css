@@ -78,9 +78,9 @@ nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
 {
   font-family: 'Merriweather', serif;
 }
-.black {
+/* .black {
   background-color: #838383 !important;
-}
+} */
 .nav-item .btn-primary.dropdown-toggle {
   background-color:#1cc5dc !important;
   font-weight: bold;

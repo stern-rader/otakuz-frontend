@@ -8,9 +8,9 @@ import {Row} from 'react-bootstrap';
 
 export class WatchList extends Component {
   render() {
-    console.log('check id of watch list',this.props.animeResults);
+    // console.log('check id of watch list',this.props.animeResults);
     const results = this.props.animeResults.map((data,idx) => {
-      console.log('yaaaaaaaarb id' ,data._id);
+      // console.log('yaaaaaaaarb id' ,data._id);
       return <AnimeCard
         name={data.name}
         img={data.img}

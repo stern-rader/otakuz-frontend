@@ -37,10 +37,10 @@ export class Reviews extends Component {
     // console.log('similerAnime'+ similarAnimes.data);
     const url = (`${process.env.REACT_APP__BACKEND_URL}/topAnimes`);
     const results = await axios.get(url);
-    console.log('similarAnimesData' , results.data);
+    // console.log('similarAnimesData' , results.data);
     const urlReviews = (`${process.env.REACT_APP__BACKEND_URL}/reviews?id=${this.props.id}`);
     const reviews = await axios.get(urlReviews);
-    console.log('get reviews ' ,reviews.data);
+    // console.log('get reviews ' ,reviews.data);
     await this.setState({ similarAnimesData: results.data , reviews:reviews.data });
     // let date = JSON.stringify(new Date());
     // console.log('date' ,date);
@@ -65,8 +65,8 @@ export class Reviews extends Component {
     };
     const reviews = await axios.post(`${process.env.REACT_APP__BACKEND_URL}/reviews` , reviewData);
     await this.setState({reviews:reviews.data});
-    console.log('reviews test' , reviews);
-    console.log('recieved reviews ' , reviews.data);
+    // console.log('reviews test' , reviews);
+    // console.log('recieved reviews ' , reviews.data);
     event.target.name.value='';
     event.target.comment.value = '';
   };
@@ -103,7 +103,7 @@ export class Reviews extends Component {
     return time ;
   }
   render() {
-    console.log('test the id' , this.props.id );
+    // console.log('test the id' , this.props.id );
     const reviewsData = this.state.reviews.map((data) => {
       return (
 
