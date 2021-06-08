@@ -111,5 +111,9 @@ li#afterLogo {
 }
 
 img#logoSite {
-  width: 10rem;
+  width: 8rem;
+}
+
+nav.navbar-dark.fixed-top.scrolling-navbar.navbar.navbar-expand-md {
+  height: 4rem;
 }

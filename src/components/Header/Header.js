@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import { MDBNavbar, MDBNavbarNav, MDBNavbarBrand ,MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Nav, Button , NavDropdown} from 'react-bootstrap';
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 // import Dropdown from 'react-bootstrap/Dropdown';
-import logo from './logo.png';
+import logo from './logo3.png';
 
 //  auth library
 import { withAuth0 } from '@auth0/auth0-react';
@@ -89,17 +89,19 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
           <Router>
             {/* <img src={logo} alt="" /> */}
             <MDBNavbar color="black" fixed="top" dark expand="md" scrolling transparent>
-              <MDBNavbarBrand >
-
-              </MDBNavbarBrand>
+              <a href='/' >
+                <MDBNavbarBrand >
+                  <img src={logo} alt="" id='logoSite' />
+                </MDBNavbarBrand>
+              </a>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav LEFT>
-                  <MDBNavItem >
+                  {/* <MDBNavItem >
                     <strong><img src={logo} alt="" id='logoSite' /></strong>
-                    {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link> */}
+                    {/* <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
 
-                  </MDBNavItem>
+                  </MDBNavItem> */} */}
                   <MDBNavItem id='afterLogo'>
                     <Nav.Link href={`${process.env.REACT_APP__HOME_URL}`} >Home</Nav.Link>
                   </MDBNavItem>
